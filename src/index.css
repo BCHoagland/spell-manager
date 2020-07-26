@@ -12,6 +12,15 @@ code {
     monospace;
 }
 
+.link {
+  color: gray;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: black;
+}
+
 /* HEADER */
 .header {
   width: 100%;
@@ -92,4 +101,11 @@ code {
 .spellHeader {
   border-bottom: 1px solid mediumslateblue;
   padding-bottom: 1em;
+}
+
+.exitButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1.5em 2em;
 }
