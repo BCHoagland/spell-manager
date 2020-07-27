@@ -8,7 +8,7 @@ function SpellEntry(props) {
                 <div className='link' onClick={props.click}>{props.spell.name}</div>
             </td>
             <td>{props.spell.school}</td>
-            <td>{props.spell.shortDesc}</td>
+            {/* <td>{props.spell.shortDesc}</td> */}
             <td>{props.spell.source}</td>
         </tr>
     )
@@ -35,7 +35,7 @@ class SpellTable extends React.Component {
                         <tr>
                             <td>Name</td>
                             <td>School</td>
-                            <td>Description</td>
+                            {/* <td>Description</td> */}
                             <td>Source</td>
                         </tr>
                         </thead>

@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import SpellCollection from './components/SpellCollection';
-import spells from './data/fullSpells'
+// import phbSpells from './data/phb';
+// import frostburnSpells from './data/frostburn';
+import spells from './data/spells';
 
 
 // HEADER
@@ -17,6 +19,8 @@ function Header() {
   )
 }
 
+// const spells = phbSpells.concat(frostburnSpells);
+
 const characterClass = 'druid';
 const selectedSpells = spells.filter(spell => spell.level.hasOwnProperty(characterClass));
 
@@ -25,9 +29,6 @@ function App() {
   return (
     <div>
       <Header />
-      {/* <div>
-        {[0,1,2,3,4,5,6,7,8,9].map(i => <SpellTable key={i} level={i} entries={selectedSpells.filter(spell => spell.level[characterClass] === i)} />)}
-      </div> */}
       <SpellCollection spells={selectedSpells} characterClass={characterClass} />
     </div>
   );
