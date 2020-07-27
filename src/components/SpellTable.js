@@ -1,5 +1,4 @@
 import React from 'react';
-import SpellPage from './SpellPage'
 
 
 function SpellEntry(props) {
@@ -10,6 +9,7 @@ function SpellEntry(props) {
             </td>
             <td>{props.spell.school}</td>
             <td>{props.spell.shortDesc}</td>
+            <td>{props.spell.source}</td>
         </tr>
     )
 }
@@ -19,14 +19,10 @@ class SpellTable extends React.Component {
         super(props);
         this.state = {
             level: props.level,
-            entries: props.entries,
-            page: null
+            spells: props.spells,
+            page: null,
+            showPage: props.showPage
         }
-        // this.showPage = this.showPage.bind(this);
-    }
-
-    showPage(spell) {
-        this.setState({page: spell});
     }
 
     render() {
@@ -39,16 +35,14 @@ class SpellTable extends React.Component {
                         <tr>
                             <td>Name</td>
                             <td>School</td>
-                            <td>Name</td>
+                            <td>Description</td>
+                            <td>Source</td>
                         </tr>
                         </thead>
                         <tbody>
-                            {this.props.entries.map((entry) => <SpellEntry key={entry.name} spell={entry} click={this.showPage.bind(this, entry)} />)}
+                            {this.props.spells.map((entry) => <SpellEntry key={entry.name} spell={entry} click={this.state.showPage.bind(this, entry)} />)}
                         </tbody>
                     </table>
-                </div>
-                <div>
-                    {this.state.page != null && <SpellPage spell={this.state.page} exit={this.showPage.bind(this, null)} />}
                 </div>
             </div>
         )

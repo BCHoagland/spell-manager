@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import SpellTable from './components/SpellTable';
-import spells from './data/spells'
+import SpellCollection from './components/SpellCollection';
+import spells from './data/fullSpells'
 
 
 // HEADER
@@ -17,13 +17,18 @@ function Header() {
   )
 }
 
+const characterClass = 'druid';
+const selectedSpells = spells.filter(spell => spell.level.hasOwnProperty(characterClass));
 
 // APP
 function App() {
   return (
     <div>
       <Header />
-      <SpellTable level={0} entries={spells} />
+      {/* <div>
+        {[0,1,2,3,4,5,6,7,8,9].map(i => <SpellTable key={i} level={i} entries={selectedSpells.filter(spell => spell.level[characterClass] === i)} />)}
+      </div> */}
+      <SpellCollection spells={selectedSpells} characterClass={characterClass} />
     </div>
   );
 }

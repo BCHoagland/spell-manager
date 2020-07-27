@@ -2,8 +2,11 @@ const spells = [
 {
     name: 'Animate Snow',
     school: 'Transmutation [Cold]',
+    source: 'Frostburn',
+    level: {
+        'druid': 6
+    },
     fields: {
-        'level': 'Druid 6',
         'components': 'V, S, M',
         'casting time': '1 standard action',
         'range': 'Medium (100 ft. + 10 ft./level)',
@@ -17,8 +20,11 @@ const spells = [
 }, {
     name: 'Evergreen',
     school: 'Transmutation [Fire]',
+    source: 'Frostburn',
+    level: {
+        'druid': 2
+    },
     fields: {
-        'level': 'Druid 2',
         'components': 'V, S, DF',
         'casting time': '1 standard action',
         'range': 'Medium (100 ft. + 10 ft./level)',
