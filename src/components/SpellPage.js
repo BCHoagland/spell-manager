@@ -49,7 +49,7 @@ class SpellPage extends React.Component {
         document.addEventListener("keydown", this.esc, false);
     }
 
-    // removed key listener when removed
+    // remove key listener when removed
     componentWillUnmount() {
         document.removeEventListener("keydown", this.esc, false);
     }

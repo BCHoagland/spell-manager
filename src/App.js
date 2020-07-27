@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 import SpellCollection from './components/SpellCollection';
-// import phbSpells from './data/phb';
-// import frostburnSpells from './data/frostburn';
 import spells from './data/spells';
 
 
@@ -18,8 +16,6 @@ function Header() {
     </div>
   )
 }
-
-// const spells = phbSpells.concat(frostburnSpells);
 
 const characterClass = 'druid';
 const selectedSpells = spells.filter(spell => spell.level.hasOwnProperty(characterClass));
