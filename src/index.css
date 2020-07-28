@@ -31,18 +31,16 @@ code {
   margin-top: 2em;
 }
 
-.header p:first-child {
+.header #sessionName {
   float: left;
   margin-left: 4em;
 }
 
-.header div:last-child {
+.header #characterInfo {
   float: right;
   margin-right: 4em;
-}
-
-.header div p {
-  display: inline-block;
+  line-height: 0;
+  text-align: right;
 }
 
 /* TABLE STYLING */

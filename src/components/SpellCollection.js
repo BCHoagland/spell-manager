@@ -7,6 +7,7 @@ class SpellCollection extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            session: props.session,
             spells: props.spells,
             characterClass: props.characterClass,
             page: null
@@ -22,7 +23,7 @@ class SpellCollection extends React.Component {
         return (
             <div>
                 {[0,1,2,3,4,5,6,7,8,9].map(
-                    i => <SpellTable key={i} level={i} spells={this.state.spells.filter(spell => spell.level[this.state.characterClass] === i)} showPage={this.showPage} />
+                    i => <SpellTable key={i} level={i} spells={this.state.spells.filter(spell => spell.level[this.state.characterClass] === i)} showPage={this.showPage} session={this.state.session} />
                 )}
                 <div>
                     {this.state.page != null && <SpellPage spell={this.state.page} exit={this.showPage.bind(this, null)} />}

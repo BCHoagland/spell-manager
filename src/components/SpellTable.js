@@ -1,4 +1,5 @@
 import React from 'react';
+import {getLocalStorage, setLocalStorage} from '../utils/storage';
 
 
 // function SpellEntry(props) {
@@ -6,10 +7,11 @@ class SpellEntry extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            session: props.session,
             spell: props.spell,
             popup: props.popup,
-            prepared: localStorage[props.spell.name] === 'P',
-            cast: localStorage[props.spell.name] === 'C',
+            prepared: getLocalStorage(props.session, props.spell.name) === 'P',
+            cast: getLocalStorage(props.session, props.spell.name) === 'C'
         }
         this.getColor = this.getColor.bind(this);
         this.changeCheck = this.changeCheck.bind(this);
@@ -39,13 +41,12 @@ class SpellEntry extends React.Component {
         }
 
         // save checked status of this spell in localStorage
-        // localStorage
         if (p) {
-            localStorage.setItem(this.state.spell.name, 'P');
+            setLocalStorage(this.state.session, this.state.spell.name, 'P');
         } else if (c) {
-            localStorage.setItem(this.state.spell.name, 'C');
+            setLocalStorage(this.state.session, this.state.spell.name, 'C');
         } else {
-            localStorage.removeItem(this.state.spell.name);
+            setLocalStorage(this.state.session, this.state.spell.name, null);
         }
 
         // actually update the state
@@ -80,6 +81,7 @@ class SpellTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            session: props.session,
             level: props.level,
             spells: props.spells,
             page: null,
@@ -103,7 +105,7 @@ class SpellTable extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.spells.map((entry) => <SpellEntry key={entry.name} spell={entry} popup={this.state.showPage.bind(this, entry)} />)}
+                        {this.props.spells.map((entry) => <SpellEntry key={entry.name} session={this.state.session} spell={entry} popup={this.state.showPage.bind(this, entry)} />)}
                     </tbody>
                 </table>
             </div>
