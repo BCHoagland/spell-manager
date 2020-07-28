@@ -45,36 +45,36 @@ code {
   display: inline-block;
 }
 
-/* SPELL TABLE */
-.spellTable {
+/* TABLE STYLING */
+.table {
   width: 60%;
   margin: auto;
   margin-bottom: 4em;
 }
 
-.spellTable table {
+.table table {
   width: 100%;
   border: 1px solid gray;
   border-collapse: collapse;
 }
 
-.spellTable thead {
+.table thead {
   font-weight: bold;
 }
 
-.spellTable tr {
+.table tr {
   border: 1px solid gray;
 }
 
-.spellTable td {
+.table td {
   padding: 0.5em;
 }
 
-.spellTable tbody tr:nth-child(odd) {
+.table tbody tr:nth-child(odd) {
   background-color: #eee;
 }
 
-.spellTable tr:nth-child(even) {
+.table tr:nth-child(even) {
   background-color: #fff;
 }
 

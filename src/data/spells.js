@@ -5399,6 +5399,6 @@ const spells = [
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'effect': '20-ft. radius', 'duration': '1 round/level', 'saving throw': 'Fortitude half', 'spell resistance': 'No'},
 'longDesc': 'You create a zone of icy cold within the spell’s area, dealing 1d6 points of cold damage per round. Arcane Material Component: A snowball.',
 },
-
 ]
+
 export default spells;

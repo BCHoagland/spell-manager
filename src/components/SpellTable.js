@@ -75,7 +75,7 @@ class SpellEntry extends React.Component {
         )
     }
 }
-  
+
 class SpellTable extends React.Component {
     constructor(props) {
         super(props);
@@ -89,11 +89,10 @@ class SpellTable extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className='spellTable'>
-                    <h1>Level {this.state.level}</h1>
-                    <table>
-                        <thead>
+            <div className='table'>
+                <h1>Level {this.state.level}</h1>
+                <table>
+                    <thead>
                         <tr>
                             <td>Prepared</td>
                             <td>Cast</td>
@@ -102,12 +101,11 @@ class SpellTable extends React.Component {
                             {/* <td>Description</td> */}
                             <td>Source</td>
                         </tr>
-                        </thead>
-                        <tbody>
-                            {this.props.spells.map((entry) => <SpellEntry key={entry.name} spell={entry} popup={this.state.showPage.bind(this, entry)} />)}
-                        </tbody>
-                    </table>
-                </div>
+                    </thead>
+                    <tbody>
+                        {this.props.spells.map((entry) => <SpellEntry key={entry.name} spell={entry} popup={this.state.showPage.bind(this, entry)} />)}
+                    </tbody>
+                </table>
             </div>
         )
     }

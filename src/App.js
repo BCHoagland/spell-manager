@@ -1,5 +1,9 @@
 import React from 'react';
+
+import SpellAllotmentTable from './components/SpellAllotmentTable';
 import SpellCollection from './components/SpellCollection';
+
+import spellAllotment from './data/config';
 import spells from './data/spells';
 
 
@@ -24,6 +28,7 @@ function App() {
   return (
     <div>
       <Header />
+      <SpellAllotmentTable allotment={spellAllotment} />
       <SpellCollection spells={selectedSpells} characterClass={characterClass} />
     </div>
   );
