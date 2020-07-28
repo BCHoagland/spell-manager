@@ -15,6 +15,18 @@ class SpellCollection extends React.Component {
         this.showPage = this.showPage.bind(this);
     }
 
+    // update state when the App gets updated (when session is changed)
+    componentDidUpdate(prevProps) {
+        if (prevProps.session !== this.props.session) {
+            this.setState({
+                session: this.props.session,
+                spells: this.props.spells,
+                characterClass: this.props.characterClass
+            });
+        }
+    }
+
+    // show the spell page for a given spell
     showPage(spell) {
         this.setState({page: spell})
     }

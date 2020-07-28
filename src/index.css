@@ -31,6 +31,14 @@ code {
   margin-top: 2em;
 }
 
+.header div {
+  line-height: 0;
+}
+
+.header div p:last-child {
+  font-size: 0.8em;
+}
+
 .header #sessionName {
   float: left;
   margin-left: 4em;
@@ -39,8 +47,16 @@ code {
 .header #characterInfo {
   float: right;
   margin-right: 4em;
-  line-height: 0;
   text-align: right;
+}
+
+#nextSesstionBtn {
+  color: royalblue;
+}
+
+#nextSesstionBtn:hover {
+  color: darkblue;
+  cursor: pointer;
 }
 
 /* TABLE STYLING */

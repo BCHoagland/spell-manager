@@ -4,9 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import config from './data/config';
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App session={Object.keys(config)[0]} />
   </React.StrictMode>,
   document.getElementById('root')
 );
