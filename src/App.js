@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import SpellCollection from './components/SpellCollection';
 import spells from './data/spells';
 
@@ -20,7 +19,7 @@ function Header() {
 const characterClass = 'druid';
 const selectedSpells = spells.filter(spell => spell.level.hasOwnProperty(characterClass));
 
-// APP
+// SPELL STUFF
 function App() {
   return (
     <div>
