@@ -2,22 +2,21 @@ import React from 'react';
 
 
 function getAllotmentRow(level, allotment) {
-    if (allotment[0] === 0 && allotment[1] === 0) {
+    const sum = allotment.reduce((total, num) => total + num, 0);
+
+    // if all zeros, don't bother showing a row in the table for this zero
+    if (sum === 0) {
         return null;
     } else {
-        let canCast;
-        let slots;
-        if (allotment[0] === 0) {
-            canCast = 0;
-            slots = allotment[1];
-        } else {
-            canCast = allotment[0] + allotment[1];
-            slots = allotment[0] + allotment[1];
-        }
+        // calculate how many spells can be cast/how many total spell slots we have for this level
+        const canCast = (allotment[0] === 0) ? 0 : sum;
+        const slots = sum;
+
+        // put the info in a table row
         return (
             <tr key={level}>
                 <td>{level}</td>
-                <td>{canCast}</td>
+                {(allotment[2] > 0) ? <td>{canCast} ({sum - allotment[2]} + {allotment[2]} school)</td> : <td>{canCast}</td>}
                 <td>{slots}</td>
             </tr>
         )
