@@ -1,0 +1,9 @@
+FIGURE OUT WHY SOME SPELL STATUSES CARRY THROUGH DIFFERENT SESSIONS
+
+Instead of removing spells you don't know, just make them translucent (or something like that). That way you can still plan ahead
+
+Go through every spell (oof) and fix them
+
+Add level back to the fields dict per spell
+
+Make the spell descriptions go in a scrollable area so there's no overflow

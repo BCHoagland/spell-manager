@@ -28,7 +28,7 @@ function SpellAllotmentTable(props) {
     const levels = Object.keys(props.profile.spellAllotment);
     return (
         <div className='table'>
-            <h1>Spell Allotment</h1>
+            <h1 id="allotmentTitle">Spell Allotment</h1>
             <table>
                 <thead>
                     <tr>

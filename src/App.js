@@ -56,9 +56,9 @@ class App extends React.Component {
         const profile = config[this.state.session];
         return (
             <div>
-                <Header session={this.state.session} name={profile.name} characterClass={profile.class} nextSession={this.nextSession} />
                 <SpellAllotmentTable profile={profile} />
                 <SpellCollection spells={filterSpells(spells, profile)} characterClass={profile.class} session={this.state.session} />
+                <Header session={this.state.session} name={profile.name} characterClass={profile.class} nextSession={this.nextSession} />
             </div>
         );
     }
