@@ -1,6 +1,6 @@
 import React from 'react';
 import {getLocalStorage, setLocalStorage} from '../utils/storage';
-
+import {highlightColors, schoolColors} from '../utils/colors';
 
 // function SpellEntry(props) {
 class SpellEntry extends React.Component {
@@ -13,15 +13,15 @@ class SpellEntry extends React.Component {
             prepared: getLocalStorage(props.session, props.spell.name) === 'P',
             cast: getLocalStorage(props.session, props.spell.name) === 'C'
         }
-        this.getColor = this.getColor.bind(this);
+        this.getColor = this.getHighlight.bind(this);
         this.changeCheck = this.changeCheck.bind(this);
     }
 
-    getColor() {
+    getHighlight() {
         if (this.state.prepared) {
-            return 'rgba(102, 205, 170, 0.4)';
+            return highlightColors['P'];
         } else if (this.state.cast) {
-            return 'rgba(250, 128, 114, 0.4)';
+            return highlightColors['C'];
         } else {
             return null;
         }
@@ -57,20 +57,33 @@ class SpellEntry extends React.Component {
     }
 
     render() {
+        // split the school name into the actual name and any modifiers that come after it
+        const splitSchool = this.state.spell.school.split(" ");
+        const schoolName = splitSchool.shift();
+        const schoolPostfix = splitSchool.join(" ");
+
         return (
-            // <tr style={{backgroundColor: this.state.color}}>
-            <tr style={{backgroundColor: this.getColor()}}>
+            <tr style={{backgroundColor: this.getHighlight()}}>
+                {/* Prepared checkbox */}
                 <td>
                     <input type="checkbox" onChange={e => {}} checked={this.state.prepared} onClick={this.changeCheck.bind(this, 'P')}></input>
                 </td>
+                {/* Cast checkbox */}
                 <td>
                     <input type="checkbox" onChange={e => {}} checked={this.state.cast} onClick={this.changeCheck.bind(this, 'C')}></input>
                 </td>
+                {/* Spell name */}
                 <td>
                     <div className='link' onClick={this.state.popup}>{this.state.spell.name}</div>
                 </td>
-                <td>{this.state.spell.school}</td>
+                {/* School name */}
+                <td>
+                    <span style={{color: schoolColors[schoolName.toLowerCase()]}}>{schoolName}</span>
+                    &nbsp;{schoolPostfix}
+                </td>
+                {/* Short description */}
                 {/* <td>{this.state.spell.shortDesc}</td> */}
+                {/* Spell source */}
                 <td>{this.state.spell.source}</td>
             </tr>
         )

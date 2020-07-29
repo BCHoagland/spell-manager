@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-function getAllotmentRow(level, allotment) {
+function getAllotmentRow(level, profile) {
+    const allotment = profile.spellAllotment[level];
     const sum = allotment.reduce((total, num) => total + num, 0);
 
     // if all zeros, don't bother showing a row in the table for this zero
@@ -16,7 +17,7 @@ function getAllotmentRow(level, allotment) {
         return (
             <tr key={level}>
                 <td>{level}</td>
-                {(allotment[2] > 0) ? <td>{canCast} ({sum - allotment[2]} + {allotment[2]} school)</td> : <td>{canCast}</td>}
+                {(allotment[2] > 0) ? <td>{canCast} ({sum - allotment[2]} + {allotment[2]} {profile.school})</td> : <td>{canCast}</td>}
                 <td>{slots}</td>
             </tr>
         )
@@ -24,7 +25,7 @@ function getAllotmentRow(level, allotment) {
 }
 
 function SpellAllotmentTable(props) {
-    const levels = Object.keys(props.allotment);
+    const levels = Object.keys(props.profile.spellAllotment);
     return (
         <div className='table'>
             <h1>Spell Allotment</h1>
@@ -37,7 +38,7 @@ function SpellAllotmentTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {levels.map(level => getAllotmentRow(level, props.allotment[level]))}
+                    {levels.map(level => getAllotmentRow(level, props.profile))}
                 </tbody>
             </table>
         </div>
