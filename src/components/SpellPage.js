@@ -36,11 +36,11 @@ class SpellPage extends React.Component {
         this.esc = this.esc.bind(this)
     }
 
-    // called on keypress
-    esc(event) {
-        // esc key
-        if (event.keyCode === 27) {
-            this.state.exit();
+    componentDidUpdate(prevProps) {
+        if (prevProps.spell !== this.props.spell) {
+            this.setState({
+                spell: this.props.spell
+            });
         }
     }
 
@@ -52,6 +52,14 @@ class SpellPage extends React.Component {
     // remove key listener when removed
     componentWillUnmount() {
         document.removeEventListener("keydown", this.esc, false);
+    }
+
+    // called on keypress
+    esc(event) {
+        // esc key
+        if (event.keyCode === 27) {
+            this.state.exit();
+        }
     }
 
     render() {
