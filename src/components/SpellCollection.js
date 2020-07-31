@@ -1,5 +1,5 @@
 import React from 'react';
-import SpellTable from './SpellTable';
+import SpellTable from './table/SpellTable';
 import SpellPage from './SpellPage';
 
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import {getLocalStorage, setLocalStorage} from '../utils/storage';
-import {highlightColors, schoolColors} from '../utils/colors';
+import {getLocalStorage, setLocalStorage} from '../../utils/storage';
+import {highlightColors, schoolColors} from '../../utils/colors';
 
-// function SpellEntry(props) {
+
 class SpellEntry extends React.Component {
     constructor(props) {
         super(props);
@@ -15,6 +15,17 @@ class SpellEntry extends React.Component {
         }
         this.getColor = this.getHighlight.bind(this);
         this.changeCheck = this.changeCheck.bind(this);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.session !== this.props.session) {
+            this.setState({
+                session: this.props.session,
+                spell: this.props.spell,
+                prepared: getLocalStorage(this.props.session, this.props.spell.name) === 'P',
+                cast: getLocalStorage(this.props.session, this.props.spell.name) === 'C'
+            });
+        }
     }
 
     getHighlight() {
@@ -90,40 +101,4 @@ class SpellEntry extends React.Component {
     }
 }
 
-class SpellTable extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            session: props.session,
-            level: props.level,
-            spells: props.spells,
-            page: null,
-            showPage: props.showPage
-        }
-    }
-
-    render() {
-        return (
-            <div className='table'>
-                <h1>Level {this.state.level}</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Prepared</td>
-                            <td>Cast</td>
-                            <td>Name</td>
-                            <td>School</td>
-                            {/* <td>Description</td> */}
-                            <td>Source</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.props.spells.map((entry) => <SpellEntry key={entry.name} session={this.state.session} spell={entry} popup={this.state.showPage.bind(this, entry)} />)}
-                    </tbody>
-                </table>
-            </div>
-        )
-    }
-}
-
-export default SpellTable;
+export default SpellEntry;
