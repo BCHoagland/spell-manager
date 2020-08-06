@@ -17,6 +17,7 @@ function SpellFields(props) {
     );
 }
 
+
 function SpellHeader(props) {
     return (
         <div className='spellHeader'>
@@ -25,6 +26,18 @@ function SpellHeader(props) {
         </div>
     )
 }
+
+
+function SpellDescription(props) {
+    return (
+        <div className="description">
+            {props.desc.map(
+                (line, i) => <p key={i}>{line}</p>
+            )}
+        </div>
+    )
+}
+
 
 class SpellPage extends React.Component {
     constructor(props) {
@@ -67,7 +80,7 @@ class SpellPage extends React.Component {
             <div className='spellPage'>
                 <SpellHeader spell={this.state.spell} />
                 <SpellFields spell={this.state.spell} />
-                <div>{this.state.spell.longDesc}</div>
+                <SpellDescription desc={this.state.spell.longDesc} />
                 <div className='link exitButton' onClick={this.state.exit}>X</div>
             </div>
         )

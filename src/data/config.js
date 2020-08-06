@@ -76,7 +76,7 @@ const config = {
     },
     'Huffy\'s Extraordinary Adventure': {
         name: 'Torsten Bombogenesis',
-        class: 'druid',
+        class: 'seidr',
         sources: [
             'PHB',
             'Frostburn'

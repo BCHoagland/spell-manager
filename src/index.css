@@ -22,33 +22,22 @@ code {
 }
 
 /* HEADER */
-.header {
-  width: 100%;
-  height: 100px;
+.header div {
+  line-height: 0.5em;
   position: fixed;
   top: 10px;
-}
-
-.header p {
-  margin-top: 2em;
-}
-
-.header div {
-  line-height: 0;
 }
 
 .header div p:last-child {
   font-size: 0.8em;
 }
 
-.header #sessionName {
-  float: left;
-  margin-left: 4em;
+#sessionHeader {
+  left: 2em;
 }
 
-.header #characterInfo {
-  float: right;
-  margin-right: 4em;
+#characterHeader {
+  right: 2em;
   text-align: right;
 }
 
@@ -60,6 +49,7 @@ code {
   color: darkblue;
   cursor: pointer;
 }
+
 
 /* TABLE STYLING */
 #allotmentTitle {
@@ -98,13 +88,14 @@ code {
   background-color: #fff;
 }
 
+
 /* SPELL PAGE */
 .spellPage {
   width: 70%;
   height: 80%;
   background-color: white;
   border: 1px solid gray;
-  padding: 4em;
+  padding: 2em 4em;
   box-sizing: border-box;
   position: fixed;
   top: 50%;
@@ -112,10 +103,25 @@ code {
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .spellPage div {
   margin-bottom: 2em;
+}
+
+.spellPage .description {
+  flex-grow: 1;
+  height: 50px;
+  overflow: scroll;
+}
+
+.spellPage textarea {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .spellHeader {
@@ -128,4 +134,17 @@ code {
   top: 0;
   right: 0;
   margin: 1.5em 2em;
+}
+
+
+/* SCROLLBARS */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }

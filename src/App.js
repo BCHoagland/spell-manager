@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Header from './components/Header';
-import SpellAllotmentTable from './components/SpellAllotmentTable';
+import SessionHeader from './components/headers/SessionHeader';
+import CharacterHeader from './components/headers/CharacterHeader';
+import SpellAllotmentTable from './components/table/SpellAllotmentTable';
 import SpellCollection from './components/SpellCollection';
 
 import {termsInString} from './utils/string';
@@ -15,9 +16,9 @@ const allSessions = Object.keys(config);
 
 function filterSpells(spells, profile) {
     let s = spells.filter(spell => spell.level.hasOwnProperty(profile.class));
-    if (profile.knownSpells !== undefined) {
-        s = s.filter(spell => termsInString(spell.name, profile.knownSpells, true));
-    }
+    // if (profile.knownSpells !== undefined) {
+    //     s = s.filter(spell => termsInString(spell.name, profile.knownSpells, true));
+    // }
     s = s.filter(spell => profile.sources.includes(spell.source));
     if (profile.banned !== undefined) {
         s = s.filter(spell => !termsInString(spell.school, profile.banned));
@@ -58,7 +59,8 @@ class App extends React.Component {
             <div>
                 <SpellAllotmentTable profile={profile} />
                 <SpellCollection spells={filterSpells(spells, profile)} characterClass={profile.class} session={this.state.session} />
-                <Header session={this.state.session} name={profile.name} characterClass={profile.class} nextSession={this.nextSession} />
+                <SessionHeader session={this.state.session} nextSession={this.nextSession} />
+                <CharacterHeader name={profile.name} characterClass={profile.class} />
             </div>
         );
     }
