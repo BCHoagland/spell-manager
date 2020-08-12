@@ -24,7 +24,7 @@ const config = {
             'Mending',
             'Message',
             'Open/Close',
-            'Prestidigita tion',
+            'Prestidigitation',
             'Read Magic',
             'Resistance',
             'Touch of Fatigue',
@@ -82,10 +82,11 @@ const config = {
             'Frostburn'
         ],
         spellAllotment: {
-            0: [4, 0],
-            1: [2, 1],
-            2: [1, 1],
+            0: [5, 0],
+            1: [3, 1],
+            2: [2, 1],
             3: [0, 1],
+            4: [0, 1]
         }
     }
 }

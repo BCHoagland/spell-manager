@@ -13,7 +13,7 @@ class SpellEntry extends React.Component {
             prepared: getLocalStorage(props.session, props.spell.name) === 'P',
             cast: getLocalStorage(props.session, props.spell.name) === 'C'
         }
-        this.getColor = this.getHighlight.bind(this);
+        this.getHighlight = this.getHighlight.bind(this);
         this.changeCheck = this.changeCheck.bind(this);
     }
 

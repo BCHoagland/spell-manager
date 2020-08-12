@@ -5,6 +5,7 @@ import SpellEntry from './SpellEntry';
 class SpellTable extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             session: props.session,
             level: props.level,
@@ -40,7 +41,12 @@ class SpellTable extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.spells.map((entry) => <SpellEntry key={entry.name} session={this.state.session} spell={entry} popup={this.state.showPage.bind(this, entry)} />)}
+                        {this.state.spells.map((entry) => <SpellEntry
+                            key={entry.name}
+                            session={this.state.session}
+                            spell={entry}
+                            popup={this.state.showPage.bind(this, entry)}
+                        />)}
                     </tbody>
                 </table>
             </div>

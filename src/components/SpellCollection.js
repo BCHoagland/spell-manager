@@ -3,10 +3,16 @@ import SpellTable from './table/SpellTable';
 import SpellPage from './SpellPage';
 
 
-function makeSpellTable(spells, characterClass, level, showPage, session) {
-    const filteredSpells = spells.filter(spell => spell.level[characterClass] === level);
+function makeSpellTable(spells, profile, level, showPage, session) {
+    const filteredSpells = spells.filter(spell => spell.level[profile.class] === level);
     if (filteredSpells.length > 0) {
-        return <SpellTable key={level} level={level} spells={filteredSpells} showPage={showPage} session={session} />
+        return <SpellTable
+            key={level}
+            level={level}
+            spells={filteredSpells}
+            showPage={showPage}
+            session={session}
+        />
     }
 }
 
@@ -17,7 +23,7 @@ class SpellCollection extends React.Component {
         this.state = {
             session: props.session,
             spells: props.spells,
-            characterClass: props.characterClass,
+            profile: props.profile,
             page: null
         }
         this.showPage = this.showPage.bind(this);
@@ -29,7 +35,7 @@ class SpellCollection extends React.Component {
             this.setState({
                 session: this.props.session,
                 spells: this.props.spells,
-                characterClass: this.props.characterClass
+                profile: this.props.profile,
             });
         }
     }
@@ -43,7 +49,7 @@ class SpellCollection extends React.Component {
         return (
             <div>
                 {[0,1,2,3,4,5,6,7,8,9].map(
-                    i => makeSpellTable(this.state.spells, this.state.characterClass, i, this.showPage, this.state.session)
+                    i => makeSpellTable(this.state.spells, this.state.profile, i, this.showPage, this.state.session)
                 )};
                 <div>
                     {this.state.page != null && <SpellPage spell={this.state.page} exit={this.showPage.bind(this, null)} />}

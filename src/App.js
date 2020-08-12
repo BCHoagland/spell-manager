@@ -16,13 +16,13 @@ const allSessions = Object.keys(config);
 
 function filterSpells(spells, profile) {
     let s = spells.filter(spell => spell.level.hasOwnProperty(profile.class));
-    // if (profile.knownSpells !== undefined) {
-    //     s = s.filter(spell => termsInString(spell.name, profile.knownSpells, true));
-    // }
-    s = s.filter(spell => profile.sources.includes(spell.source));
+    if (profile.knownSpells !== undefined) {
+        s = s.filter(spell => termsInString(spell.name, profile.knownSpells, true));
+    }
     if (profile.banned !== undefined) {
         s = s.filter(spell => !termsInString(spell.school, profile.banned));
     }
+    s = s.filter(spell => profile.sources.includes(spell.source));
     s.sort((spell, other) => (spell.name > other.name) ? 1 : -1);
     return s;
 }
@@ -55,10 +55,11 @@ class App extends React.Component {
 
     render() {
         const profile = config[this.state.session];
+        const filteredSpells = filterSpells(spells, profile);
         return (
             <div>
                 <SpellAllotmentTable profile={profile} />
-                <SpellCollection spells={filterSpells(spells, profile)} characterClass={profile.class} session={this.state.session} />
+                <SpellCollection spells={filteredSpells} profile={profile} session={this.state.session} />
                 <SessionHeader session={this.state.session} nextSession={this.nextSession} />
                 <CharacterHeader name={profile.name} characterClass={profile.class} />
             </div>

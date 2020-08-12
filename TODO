@@ -1,5 +1,3 @@
 Go through every spell (oof) and fix them
 
 Add level back to the fields dict per spell
-
-Instead of removing spells you don't know, just make them translucent (or something like that). That way you can still plan ahead

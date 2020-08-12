@@ -37,7 +37,13 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 1, 'ranger': 1, 'sorcerer': 1, 'wizard': 1},
 'fields': {'components': 'V, S, F/DF', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'area': '20-ft.-radius emanation centered on', 'duration': '2 hours/level (D)', 'saving throw': 'None', 'spell resistance': 'No'},
-'longDesc': ['Alarm sounds a mental or audible alarm each time a creature of Tiny or larger size enters the warded area or touches it. A creature that speaks the password (deter- mined by you at the time of casting) does not set off the alarm. You decide at the time of casting whether the alarm will be mental or audible. Mental Alarm: A mental alarm alerts you (and only you) so long as you remain within 1 mile of the warded area. You note a single mental “ping” that awakens you from normal sleep but does not otherwise disturb concentration. A silence spell has no effect on a mental alarm. Audible Alarm: An audible alarm pro- duces the sound of a hand bell, and anyone within 60 feet of the warded area can hear it clearly. Reduce the distance by 10 feet for each interposing closed door and by 20 feet for each substantial interposing wall. In quiet conditions, the ringing can be heard faintly as far as 180 feet away. The sound lasts for 1 round. Creatures within a silence spell cannot hear the ringing. Ethereal or astral creatures do not trig- ger the alarm. Alarm can be made permanent with a permanency spell. Arcane Focus: A tiny bell and a piece of very fine silver wire'],
+'longDesc': [
+    'Alarm sounds a mental or audible alarm each time a creature of Tiny or larger size enters the warded area or touches it. A creature that speaks the password (determined by you at the time of casting) does not set off the alarm. You decide at the time of casting whether the alarm will be mental or audible.',
+    'Mental Alarm: A mental alarm alerts you (and only you) so long as you remain within 1 mile of the warded area. You note a single mental “ping” that awakens you from normal sleep but does not otherwise disturb concentration. A silence spell has no effect on a mental alarm.',
+    'Audible Alarm: An audible alarm produces the sound of a hand bell, and anyone within 60 feet of the warded area can hear it clearly. Reduce the distance by 10 feet for each interposing closed door and by 20 feet for each substantial interposing wall. In quiet conditions, the ringing can be heard faintly as far as 180 feet away. The sound lasts for 1 round. Creatures within a silence spell cannot hear the ringing.',
+    'Ethereal or astral creatures do not trigger the alarm. Alarm can be made permanent with a permanency spell.',
+    'Arcane Focus: A tiny bell and a piece of very fine silver wire'
+],
 },
 {
 'name': 'Align Weapon',
@@ -57,12 +63,12 @@ const spells = [
     'You assume the form of a creature of the same type as your normal form (such as humanoid or magical beast). The new form must be within one size category of your normal size. The maximum HD of an assumed form is equal to your caster level, to a maximum of 5 HD at 5th level. You can change into a member of your own kind or even into yourself.',
     'You retain your own ability scores. Your class and level, hit points, alignment, base attack bonus, and base save bonuses all remain the same. You retain all supernatual and spell-like special attacks and qualities of your normal form, except for those requiring a body part that the new form does not have (such as a mouth for a breath weapon or eyes for a gaze attack).',
     'You keep all extraordinary special attacks and qualities derived from class levels (such as a barbarian\'s rage ability), but you lose any from your normal form that are not derived from class levels (such as a dragon\'s frightful presence ability).',
-    'If the new form is capable of speech, you can communicate normally. You retain any spellcasting ability you had in your original form, but the new form must be able to speak intelligibly (that is, speak a language) to use verbal components and must have limbs capable of fine manipulation to use somatic or material compo- nents.',
+    'If the new form is capable of speech, you can communicate normally. You retain any spellcasting ability you had in your original form, but the new form must be able to speak intelligibly (that is, speak a language) to use verbal components and must have limbs capable of fine manipulation to use somatic or material components.',
     'You acquire the physical qualities of the new form while retaining your own mind. Physical qualities include natural size, mundane movement capabilities (such as burrowing, climbing, walking, swimming, and flight with wings, to a maximum speed of 120 feet for flying or 60 feet for nonflying movement), natural armor bonus, natural weapons (such as claws, bite, and so on), racial skill bonuses, racial bonus feats, and any gross physical qualities (presence or absence of wings, number of extremities, and so forth). A body with extra limbs does not allow you to make more attacks (or more advantageous two-weapon attacks) than normal.',
     'You do not gain any extraordinary special attacks or special qualities not noted above under physical qualities, such as darkvision, low-light vision, blindsense, blindsight, fast healing, regeneration, scent, and so forth.',
-    'You do not gain any supernatural special attacks, special qualities, or spell-like abilities of the new form. Your creature type and subtype (if any) remain the same regardless of your new form. You cannot take the form of any creature with a tem- plate, even if that template doesn\'t change the creature type or subtype.',
-    'You can freely designate the new form\'s minor physical qualities (such as hair co- lor, hair texture, and skin color) within the normal ranges for a creature of that kind. The new form\'s significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form\'s kind. You are effectively disguised as an average member of the new form\'s race. If you use this spell to create a disguise, you get a +10 bonus on your Disguise check.',
-    'When the change occurs, your equip- ment, if any, either remains worn or held by the new form (if it is capable of wearing or holding the item), or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can\'t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms (mouth, hands, or the like) at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its true form.'
+    'You do not gain any supernatural special attacks, special qualities, or spell-like abilities of the new form. Your creature type and subtype (if any) remain the same regardless of your new form. You cannot take the form of any creature with a template, even if that template doesn\'t change the creature type or subtype.',
+    'You can freely designate the new form\'s minor physical qualities (such as hair color, hair texture, and skin color) within the normal ranges for a creature of that kind. The new form\'s significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form\'s kind. You are effectively disguised as an average member of the new form\'s race. If you use this spell to create a disguise, you get a +10 bonus on your Disguise check.',
+    'When the change occurs, your equipment, if any, either remains worn or held by the new form (if it is capable of wearing or holding the item), or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can\'t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms (mouth, hands, or the like) at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its true form.'
 ],
 },
 {
@@ -502,7 +508,7 @@ const spells = [
 'school': 'Necromancy [Fear, Mind-Affecting]',
 'source': 'PHB',
 'level': {'bard': 1, 'cleric': 1, 'death': 1, 'sorcerer': 1, 'wizard': 1},
-'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'target': 'One living creature with 5 or', 'duration': '1d4 rounds or 1 round; see text', 'saving throw': 'Will partial', 'spell resistance': 'Yes'},
+'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'target': 'One living creature with 5 or fewer HD', 'duration': '1d4 rounds or 1 round; see text', 'saving throw': 'Will partial', 'spell resistance': 'Yes'},
 'longDesc': ['The affected creature becomes frightened. If the subject succeeds on a Will save, it is shaken for 1 round. Creatures with 6 or more Hit Dice are immune to this effect. Cause fear counters and dispels remove fear.'],
 },
 {
@@ -623,7 +629,12 @@ const spells = [
 'source': 'PHB',
 'level': {'sorcerer': 1, 'wizard': 1},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': '15 ft.', 'area': 'Cone-shaped burst', 'duration': 'Instantaneous; see text', 'saving throw': 'Will negates', 'spell resistance': 'Yes'},
-'longDesc': ['A vivid cone of clashing colors springs forth from your hand, causing creatures to become stunned, perhaps also blinded, and possibly knocking them unconscious. Each creature within the cone is affected according to its Hit Dice. 2 HD or less: The creature is unconscious, blinded, and stunned for 2d4 rounds, then blinded and stunned for 1d4 rounds, and then stunned for 1 round. (Only living creatures are knocked unconscious.) 3 or 4 HD: The creature is blinded and stunned for 1d4 rounds, then stunned for 1 round. 5 or more HD: The creature is stunned for 1 round. Sightless creatures are not affected by color spray. Material Component: A pinch each of powder or sand that is colored red, yellow, and blue.'],
+'longDesc': [
+    'A vivid cone of clashing colors springs forth from your hand, causing creatures to become stunned, perhaps also blinded, and possibly knocking them unconscious. Each creature within the cone is affected according to its Hit Dice. Sightless creatures are not affected by color spray.',
+    '2 HD or less: The creature is unconscious, blinded, and stunned for 2d4 rounds, then blinded and stunned for 1d4 rounds, and then stunned for 1 round. (Only living creatures are knocked unconscious.)',
+    '3 or 4 HD: The creature is blinded and stunned for 1d4 rounds, then stunned for 1 round.',
+    '5 or more HD: The creature is stunned for 1 round.',
+    'Material Component: A pinch each of powder or sand that is colored red, yellow, and blue.'],
 },
 {
 'name': 'Command',
@@ -807,7 +818,11 @@ const spells = [
 'source': 'PHB',
 'level': {'cleric': 0, 'druid': 0, 'pal': 1, 'seidr': 0},
 'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'effect': 'Up to 2 gallons of water/level', 'duration': 'Instantaneous', 'saving throw': 'None', 'spell resistance': 'No'},
-'longDesc': ['This spell generates wholesome, drinkable water, just like clean rain water. Water can be created in an area as small as will actually contain the liquid, or in an area three times as large—possibly creating a downpour or filling many small recep- tacles. Note: Conjuration spells can\'t create substances or objects within a creature. Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.'],
+'longDesc': [
+    'This spell generates wholesome, drinkable water, just like clean rain water. Water can be created in an area as small as will actually contain the liquid, or in an area three times as large—possibly creating a downpour or filling many small recep- tacles.',
+    'Note: Conjuration spells can\'t create substances or objects within a creature.',
+    'Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.'
+],
 },
 {
 'name': 'Creeping Doom',
@@ -847,7 +862,10 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 1, 'cleric': 1, 'druid': 1, 'healing': 1, 'pal': 1, 'ranger': 2, 'seidr': 1},
 'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': 'Touch', 'target': 'Creature touched', 'duration': 'Instantaneous', 'saving throw': 'Will half (harmless); see', 'spell resistance': 'Yes (harmless); see text'},
-'longDesc': ['When laying your hand upon a living creature, you channel positive energy that cures 1d8 points of damage +1 point per caster level (maximum +5). Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a Will save to take half damage.'],
+'longDesc': [
+    'When laying your hand upon a living creature, you channel positive energy that cures 1d8 points of damage +1 point per caster level (maximum +5).',
+    'Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a Will save to take half damage.'
+],
 },
 {
 'name': 'Cure Light Wounds, Mass',
@@ -1375,7 +1393,10 @@ const spells = [
 'source': 'PHB',
 'level': {'druid': 1, 'plant': 1, 'ranger': 1, 'seidr': 1},
 'fields': {'components': 'V, S, DF', 'casting time': '1 standard action', 'range': 'Long (400 ft. + 40 ft./level)', 'area': 'Plants in a 40-ft.-radius spread', 'duration': '1 min./level (D)', 'saving throw': 'Reflex partial; see text', 'spell resistance': 'No'},
-'longDesc': ['Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast and causing them to become entangled. The creature can break free and move half its normal speed by using a full-round action to make a DC 20 Strength check or a DC 20 Escape Artist check. A creature that succeeds on a Reflex save is not entangled but can still move at only half speed through the area. Each round on your turn, the plants once again attempt to entangle all creatures that have avoided or escaped entanglement. Note: The DM may alter the effects of the spell somewhat, based on the nature of the entangling plants.'],
+'longDesc': [
+    'Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast and causing them to become entangled. The creature can break free and move half its normal speed by using a full-round action to make a DC 20 Strength check or a DC 20 Escape Artist check. A creature that succeeds on a Reflex save is not entangled but can still move at only half speed through the area.',
+    'Each round on your turn, the plants once again attempt to entangle all creatures that have avoided or escaped entanglement.',
+    'Note: The DM may alter the effects of the spell somewhat, based on the nature of the entangling plants.'],
 },
 {
 'name': 'Enthrall',
@@ -1583,7 +1604,10 @@ const spells = [
 'source': 'PHB',
 'level': {'druid': 2, 'seidr': 2},
 'fields': {'components': 'V, S, DF', 'casting time': '1 standard action', 'range': '0 ft.', 'effect': 'Sword-like beam', 'duration': '1 min./level (D)', 'saving throw': 'None', 'spell resistance': 'Yes'},
-'longDesc': ['A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the flame blade are melee touch attacks. The blade deals 1d8 points of fire damage +1 point per two caster levels (maximum +10). Since the blade is immaterial, your Strength modifier does not apply to the damage. A flame blade can ignite combustible materials such as parchment, straw, dry sticks, and cloth. The spell does not function underwater.'],
+'longDesc': [
+    'A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the flame blade are melee touch attacks. The blade deals 1d8 points of fire damage +1 point per two caster levels (maximum +10). Since the blade is immaterial, your Strength modifier does not apply to the damage.',
+    'A flame blade can ignite combustible materials such as parchment, straw, dry sticks, and cloth. The spell does not function underwater.'
+],
 },
 {
 'name': 'Flame Strike',
@@ -1735,7 +1759,12 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 0, 'sorcerer': 0, 'wizard': 0},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'effect': 'Illusory sounds', 'duration': '1 round/level (D)', 'saving throw': 'Will disbelief (if inter-', 'spell resistance': 'No'},
-'longDesc': ['Ghost sound allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound ghost sound creates when casting it and cannot thereafter change the sound\'s basic character. The volume of sound created depends on your level. You can produce as much noise as four normal humans per caster level (maximum twenty humans). Thus, talking, singing, shouting, walking, marching, or running sounds can be cre- ated. The noise a ghost sound spell produces can be virtually any type of sound within the volume limit. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans. Ghost sound can enhance the effective- ness of a silent image spell. Ghost sound can be made permanent with a permanency spell. Material Component: A bit of wool or a small lump of wax.'],
+'longDesc': [
+    'Ghost sound allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound ghost sound creates when casting it and cannot thereafter change the sound\'s basic character. The volume of sound created depends on your level. You can produce as much noise as four normal humans per caster level (maximum twenty humans). Thus, talking, singing, shouting, walking, marching, or running sounds can be created.',
+    'The noise a ghost sound spell produces can be virtually any type of sound within the volume limit. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans.',
+    'Ghost sound can enhance the effectiveness of a silent image spell. Ghost sound can be made permanent with a permanency spell.',
+    'Material Component: A bit of wool or a small lump of wax.'
+],
 },
 {
 'name': 'Ghoul Touch',
@@ -1823,7 +1852,12 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 1, 'sorcerer': 1, 'wizard': 1},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels) Target or ', 'area': 'One object or a 10-ft.', 'duration': '1 round/level (D)', 'saving throw': 'See text', 'spell resistance': 'No'},
-'longDesc': ['A grease spell covers a solid surface with a layer of slippery grease. Any creature in the area when the spell is cast must make a successful Reflex save or fall. This save is repeated on your turn each round that the creature remains within the area. A crea- ture can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can\'t move that round (and must then make a Reflex save or fall), while failure by 5 or more means it falls (see the Balance skill for details). The DM should adjust saving throws by circumstance. For example, a creature charging down an incline that is suddenly greased has little chance to avoid the effect, but its ability to exit the affected area is almost assured (whether it wants to or not). The spell can also be used to create a greasy coating on an item—a rope, ladder rungs, or a weapon handle, for instance. Material objects not in use are always af- fected by this spell, while an object wielded or employed by a creature receives a Reflex saving throw to avoid the effect. If the initial saving throw fails, the creature immediately drops the item. A saving throw must be made in each round that the creature attempts to pick up or use the greased item. A creature wearing greased armor or clothing gains a +10 circumstance bonus on Escape Artist checks and on grapple checks made to resist or escape a grapple or to escape a pin. Material Component: A bit of pork rind or butter. Greater (Spell Name) Any spell whose name begins with greater is alphabetized in this chapter according to the second word of the spell name. Thus, the description of a greater spell appears near the description of the spell on which it is based. Spell chains that have greater spells in them include those based on the spells arcane sight, command, dispel magic, glyph of warding, invisibility, magic fang, magic weapon, planar ally, planar binding, prying eyes, restoration, scrying, shadow conjuration, shadow evocation, shout, and teleport.'],
+'longDesc': [
+    'A grease spell covers a solid surface with a layer of slippery grease. Any creature in the area when the spell is cast must make a successful Reflex save or fall. This save is repeated on your turn each round that the creature remains within the area. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can\'t move that round (and must then make a Reflex save or fall), while failure by 5 or more means it falls (see the Balance skill for details).',
+    'The DM should adjust saving throws by circumstance. For example, a creature charging down an incline that is suddenly greased has little chance to avoid the effect, but its ability to exit the affected area is almost assured (whether it wants to or not).',
+    'The spell can also be used to create a greasy coating on an item — a rope, ladder rungs, or a weapon handle, for instance. Material objects not in use are always affected by this spell, while an object wielded or employed by a creature receives a Reflex saving throw to avoid the effect. If the initial saving throw fails, the creature immediately drops the item. A saving throw must be made in each round that the creature attempts to pick up or use the greased item. A creature wearing greased armor or clothing gains a +10 circumstance bonus on Escape Artist checks and on grapple checks made to resist or escape a grapple or to escape a pin.',
+    'Material Component: A bit of pork rind or butter.'
+],
 },
 {
 'name': 'Guards and Wards',
@@ -2279,7 +2313,9 @@ const spells = [
 'source': 'PHB',
 'level': {'sorcerer': 2, 'wizard': 2},
 'fields': {'components': 'V', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'target': 'One door, box, or chest with an', 'duration': 'Instantaneous; see text', 'saving throw': 'None', 'spell resistance': 'No'},
-'longDesc': ['The knock spell opens stuck, barred, locked, held, or arcane locked doors. It opens secret doors, as well as locked or trick- opening boxes or chests. It also loosens welds, shackles, or chains (provided they serve to hold closures shut). If used to open a arcane locked door, the spell does not remove the arcane lock but simply suspends its functioning for 10 minutes. In all other cases, the door does not relock itself or become stuck again on its own. Knock does not raise barred gates or similar impedi- ments (such as a portcullis), nor does it affect ropes, vines, and the like. The effect is limited by the area. A 3rd-level caster can cast a knock spell on a door of 30 square feet or less (for example, a standard 4-foot-by-7- foot door). Each spell can undo as many as two means of preventing egress. Thus if a door is locked, barred, and held, or quadruple locked, opening it requires two knock spells.'],
+'longDesc': [
+    'The knock spell opens stuck, barred, locked, held, or arcane locked doors. It opens secret doors, as well as locked or trick-opening boxes or chests. It also loosens welds, shackles, or chains (provided they serve to hold closures shut). If used to open a arcane locked door, the spell does not remove the arcane lock but simply suspends its functioning for 10 minutes. In all other cases, the door does not relock itself or become stuck again on its own.',
+    'Knock does not raise barred gates or similar impediments (such as a portcullis), nor does it affect ropes, vines, and the like. The effect is limited by the area. A 3rd-level caster can cast a knock spell on a door of 30 square feet or less (for example, a standard 4-foot-by-7-foot door). Each spell can undo as many as two means of preventing egress. Thus if a door is locked, barred, and held, or quadruple locked, opening it requires two knock spells.'],
 },
 {
 'name': 'Know Direction',
@@ -2335,7 +2371,11 @@ const spells = [
 'source': 'PHB',
 'level': {'sorcerer': 2, 'wizard': 2},
 'fields': {'components': 'V, S, F', 'casting time': '1 standard action', 'range': 'Personal or close (25 ft. + 5 ft./2', 'target': 'You or one willing creature or one', 'duration': '1 min./level (D)', 'saving throw': 'None', 'spell resistance': 'No'},
-'longDesc': ['Levitate allows you to move yourself, an- other creature, or an object up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a move action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed). A levitating creature that attacks with a melee or ranged weapon finds itself in- creasingly unstable; the first attack has a –1 penalty on attack rolls, the second –2, and so on, to a maximum penalty of –5. A full round spent stabilizing allows the creature to begin again at –1. Focus: Either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end.'],
+'longDesc': [
+    'Levitate allows you to move yourself, another creature, or an object up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a move action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).',
+    'A levitating creature that attacks with a melee or ranged weapon finds itself increasingly unstable; the first attack has a –1 penalty on attack rolls, the second –2, and so on, to a maximum penalty of –5. A full round spent stabilizing allows the creature to begin again at –1.',
+    'Focus: Either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end.'
+],
 },
 {
 'name': 'Light',
@@ -2567,7 +2607,10 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 0, 'cleric': 0, 'druid': 0, 'sorcerer': 0, 'wizard': 0, 'seidr': 0},
 'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': '10 ft.', 'target': 'One object of up to 1 lb.', 'duration': 'Instantaneous', 'saving throw': 'Will negates (harmless,', 'spell resistance': 'Yes (harmless, object)'},
-'longDesc': ['Mending repairs small breaks or tears in objects (but not warps, such as might be caused by a warp wood spell). It will weld broken metallic objects such as a ring, a chain link, a medallion, or a slender dagger, providing but one break exists. Ceramic or wooden objects with multiple breaks can be invisibly rejoined to be as strong as new. A hole in a leather sack or a wineskin is completely healed over by mending. The spell can repair a magic item, but the item\'s magical abilities are not restored. (For restoring a broken magic item\'s abilities, see the item creation feats in Chapter 5: Feats.) The spell cannot mend broken magic rods, staffs, or wands, nor does it affect creatures (including constructs).'],
+'longDesc': [
+    'Mending repairs small breaks or tears in objects (but not warps, such as might be caused by a warp wood spell). It will weld broken metallic objects such as a ring, a chain link, a medallion, or a slender dagger, providing but one break exists. Ceramic or wooden objects with multiple breaks can be invisibly rejoined to be as strong as new. A hole in a leather sack or a wineskin is completely healed over by mending. The spell can repair a magic item, but the item\'s magical abilities are not restored. (For restoring a broken magic item\'s abilities, see the item creation feats in Chapter 5: Feats.)',
+    'The spell cannot mend broken magic rods, staffs, or wands, nor does it affect creatures (including constructs).'
+],
 },
 {
 'name': 'Message',
@@ -2575,7 +2618,13 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 0, 'sorcerer': 0, 'wizard': 0},
 'fields': {'components': 'V, S, F', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'duration': '10 min./level', 'saving throw': 'None', 'spell resistance': 'No'},
-'longDesc': ['You can whisper messages and receive whispered replies with little chance of be- ing overheard. You point your finger at each creature you want to receive the message. When you whisper, the whis- pered message is audible to all targeted creatures within range. Magical silence, 1 foot of stone, 1 inch of common metal (or a thin sheet of lead), or 3 feet of wood or dirt blocks the spell. The message does not have to travel in a straight line. It can circumvent a barrier if there is an open path between you and the subject, and the path\'s entire length lies within the spell\'s range. The creatures that receive the mes- sage can whisper a reply that you hear. The spell transmits sound, not meaning. It doesn\'t transcend language barriers. Note: To speak a message, you must mouth the words and whisper, possibly al- lowing observers the opportunity to read your lips. Focus: A short piece of copper wire.'],
+'longDesc': [
+    'You can whisper messages and receive whispered replies with little chance of being overheard. You point your finger at each creature you want to receive the message. When you whisper, the whispered message is audible to all targeted creatures within range.',
+    'Magical silence, 1 foot of stone, 1 inch of common metal (or a thin sheet of lead), or 3 feet of wood or dirt blocks the spell. The message does not have to travel in a straight line. It can circumvent a barrier if there is an open path between you and the subject, and the path\'s entire length lies within the spell\'s range.',
+    'The creatures that receive the message can whisper a reply that you hear. The spell transmits sound, not meaning. It doesn\'t transcend language barriers.',
+    'Note: To speak a message, you must mouth the words and whisper, possibly allowing observers the opportunity to read your lips.',
+    'Focus: A short piece of copper wire.'
+],
 },
 {
 'name': 'Meteor Swarm',
@@ -2639,7 +2688,12 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 2, 'sorcerer': 2, 'wizard': 2},
 'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': 'Personal; see text', 'target': 'You', 'duration': '1 min./level (D)'},
-'longDesc': ['Several illusory duplicates of you pop into being, making it difficult for enemies to know which target to attack. The figments stay near you and disappear when struck. Mirror image creates 1d4 images plus one image per three caster levels (maximum eight images total). These figments separate from you and remain in a cluster, each within 5 feet of at least one other fig- ment or you. You can move into and through a mirror image. When you and the mirror image separate, observers can\'t use vision or hearing to tell which one is you and which the image. The figments may also move through each other. The fig- ments mimic your actions, pretending to cast spells when you cast a spell, drink potions when you drink a potion, levitate when you levitate, and so on. Enemies attempting to attack you or cast spells at you must select from among indistinguishable targets. Generally, roll randomly to see whether the selected target is real or a figment. Any successful attack against an image destroys it. An image\'s AC is 10 + your size modifier + your Dex modifier. Figments seem to react normally to area spells (such as looking like they\'re burned or dead after being hit by a fireball). While moving, you can merge with and split off from figments so that enemies who have learned which image is real are again confounded. An attacker must be able to see the images to be fooled. If you are invisible or an attacker shuts his or her eyes, the spell has no effect. (Being unable to see carries the same penalties as being blinded.)'],
+'longDesc': [
+    'Several illusory duplicates of you pop into being, making it difficult for enemies to know which target to attack. The figments stay near you and disappear when struck. Mirror image creates 1d4 images plus one image per three caster levels (maximum eight images total). These figments separate from you and remain in a cluster, each within 5 feet of at least one other figment or you.',
+    'You can move into and through a mirror image. When you and the mirror image separate, observers can\'t use vision or hearing to tell which one is you and which the image. The figments may also move through each other. The figments mimic your actions, pretending to cast spells when you cast a spell, drink potions when you drink a potion, levitate when you levitate, and so on.',
+    'Enemies attempting to attack you or cast spells at you must select from among indistinguishable targets. Generally, roll randomly to see whether the selected target is real or a figment. Any successful attack against an image destroys it. An image\'s AC is 10 + your size modifier + your Dex modifier. Figments seem to react normally to area spells (such as looking like they\'re burned or dead after being hit by a fireball).',
+    'While moving, you can merge with and split off from figments so that enemies who have learned which image is real are again confounded. An attacker must be able to see the images to be fooled. If you are invisible or an attacker shuts his or her eyes, the spell has no effect. (Being unable to see carries the same penalties as being blinded.)'
+],
 },
 {
 'name': 'Misdirection',
@@ -2719,7 +2773,10 @@ const spells = [
 'source': 'PHB',
 'level': {'sorcerer': 1, 'wizard': 1},
 'fields': {'components': 'V, S, M', 'casting time': '1 round', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'effect': 'One mount', 'duration': '2 hours/level (D)', 'saving throw': 'None', 'spell resistance': 'No'},
-'longDesc': ['You summon a light horse or a pony (your choice) to serve you as a mount. The steed serves willingly and well. The mount comes with a bit and bridle and a riding saddle. Material Component: A bit of horse hair.  257'],
+'longDesc': [
+    'You summon a light horse or a pony (your choice) to serve you as a mount. The steed serves willingly and well. The mount comes with a bit and bridle and a riding saddle.',
+    'Material Component: A bit of horse hair.'
+],
 },
 {
 'name': 'Move Earth',
@@ -2783,7 +2840,10 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 0, 'sorcerer': 0, 'wizard': 0},
 'fields': {'components': 'V, S, F', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'target': 'Object weighing up to 30 lb. or', 'duration': 'Instantaneous', 'saving throw': 'Will negates (object)', 'spell resistance': 'Yes (object)'},
-'longDesc': ['You can open or close (your choice) a door, chest, box, window, bag, pouch, bottle, barrel, or other container. If anything resists this activity (such as a bar on a door or a lock on a chest), the spell fails. In addition, the spell can only open and close things weighing 30 pounds or less. Thus, doors, chests, and similar objects sized for enormous creatures may be beyond this spell\'s ability to affect. Focus: A brass key.'],
+'longDesc': [
+    'You can open or close (your choice) a door, chest, box, window, bag, pouch, bottle, barrel, or other container. If anything resists this activity (such as a bar on a door or a lock on a chest), the spell fails. In addition, the spell can only open and close things weighing 30 pounds or less. Thus, doors, chests, and similar objects sized for enormous creatures may be beyond this spell\'s ability to affect.',
+    'Focus: A brass key.'
+],
 },
 {
 'name': 'Otiluke\'s Freezing Sphere',
@@ -3039,7 +3099,11 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 0, 'sorcerer': 0, 'wizard': 0},
 'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': '10 ft. Target, Effect, or ', 'area': 'See text', 'duration': '1 hour', 'saving throw': 'See text', 'spell resistance': 'No'},
-'longDesc': ['Prestidigitations are minor tricks that novice spellcasters use for practice. Once cast, a prestidigitation spell enables you to perform simple magical effects for 1 hour. The effects are minor and have severe lim- itations. A prestidigitation can slowly lift 1 pound of material. It can color, clean, or soil items in a 1-foot cube each round. It can chill, warm, or flavor 1 pound of non- living material. It cannot deal damage or affect the concentration of spellcasters. Prestidigitation can create small objects, but they look crude and artificial. The materials created by a prestidigitation spell are extremely fragile, and they cannot be used as tools, weapons, or spell compo- nents. Finally, a prestidigitation lacks the power to duplicate any other spell effects. Any actual change to an object (beyond just moving, cleaning, or soiling it) persists only 1 hour. Characters typically use prestidigitation spells to impress common folk, amuse children, and brighten dreary lives. Com- mon tricks with prestidigitations include producing tinklings of ethereal music, brightening faded flowers, creating glow- ing balls that float over your hand, gener- ating puffs of wind to flicker candles, spicing up aromas and flavors of bland food, and making little whirlwinds to sweep dust under rugs.'],
+'longDesc': [
+    'Prestidigitations are minor tricks that novice spellcasters use for practice. Once cast, a prestidigitation spell enables you to perform simple magical effects for 1 hour. The effects are minor and have severe limitations.',
+    'A prestidigitation can slowly lift 1 pound of material. It can color, clean, or soil items in a 1-foot cube each round. It can chill, warm, or flavor 1 pound of non-living material. It cannot deal damage or affect the concentration of spellcasters. Prestidigitation can create small objects, but they look crude and artificial. The materials created by a prestidigitation spell are extremely fragile, and they cannot be used as tools, weapons, or spell components. Finally, a prestidigitation lacks the power to duplicate any other spell effects. Any actual change to an object (beyond just moving, cleaning, or soiling it) persists only 1 hour.',
+    'Characters typically use prestidigitation spells to impress common folk, amuse children, and brighten dreary lives. Common tricks with prestidigitations include producing tinklings of ethereal music, brightening faded flowers, creating glowing balls that float over your hand, generating puffs of wind to flicker candles, spicing up aromas and flavors of bland food, and making little whirlwinds to sweep dust under rugs.'
+],
 },
 {
 'name': 'Prismatic Sphere',
@@ -3071,7 +3135,9 @@ const spells = [
 'source': 'PHB',
 'level': {'druid': 1, 'fire': 2, 'seidr': 1},
 'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': '0 ft.', 'effect': 'Flame in your palm', 'duration': '1 min./level (D)', 'saving throw': 'None', 'spell resistance': 'Yes'},
-'longDesc': ['Flames as bright as a torch appear in your open hand. The flames harm neither you nor your equipment. In addition to providing illumination, the flames can be hurled or used to touch enemies. You can strike an opponent with a melee touch attack, dealing fire damage equal to 1d6 +1 point per caster level (maximum +5). Alternatively, you can hurl the flames up to 120 feet as a thrown weapon. When doing so, you attack with a ranged touch attack (with no range penalty) and deal the same damage as with the melee attack. No sooner do you hurl the flames than a new set appears in your hand. Each attack you make reduces the remaining duration by 1 minute. If an attack reduces the remaining duration to 0 minutes or less, the spell ends after the attack resolves. This spell does not function underwater.'],
+'longDesc': [
+    'Flames as bright as a torch appear in your open hand. The flames harm neither you nor your equipment. In addition to providing illumination, the flames can be hurled or used to touch enemies. You can strike an opponent with a melee touch attack, dealing fire damage equal to 1d6 +1 point per caster level (maximum +5). Alternatively, you can hurl the flames up to 120 feet as a thrown weapon. When doing so, you attack with a ranged touch attack (with no range penalty) and deal the same damage as with the melee attack.',
+    'No sooner do you hurl the flames than a new set appears in your hand. Each attack you make reduces the remaining duration by 1 minute. If an attack reduces the remaining duration to 0 minutes or less, the spell ends after the attack resolves. This spell does not function underwater.'],
 },
 {
 'name': 'Programmed Image',
@@ -3223,7 +3289,10 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 0, 'cleric': 0, 'druid': 0, 'pal': 1, 'ranger': 1, 'sorcerer': 0, 'wizard': 0, 'seidr': 0},
 'fields': {'components': 'V, S, F', 'casting time': '1 standard action', 'range': 'Personal', 'target': 'You', 'duration': '10 min./level'},
-'longDesc': ['By means of read magic, you can decipher magical inscriptions on objects—books, scrolls, weapons, and the like—that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed scroll. Furthermore, once the spell is cast and you have read the magical inscription, you are thereafter able to read that particular writing without recourse to the use of read magic. You can read at the rate of one page (250 words) per minute. The spell allows you to identify a glyph of warding with a DC 13 Spellcraft check, a greater glyph of warding with a DC 16 Spellcraft check, or any symbol spell with a Spellcraft check (DC 10 + spell level). Read magic can be made permanent with a permanency spell. Focus: A clear crystal or mineral prism.'],
+'longDesc': [
+    'By means of read magic, you can decipher magical inscriptions on objects — books, scrolls, weapons, and the like — that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed scroll. Furthermore, once the spell is cast and you have read the magical inscription, you are thereafter able to read that particular writing without recourse to the use of read magic.',
+    'You can read at the rate of one page (250 words) per minute. The spell allows you to identify a glyph of warding with a DC 13 Spellcraft check, a greater glyph of warding with a DC 16 Spellcraft check, or any symbol spell with a Spellcraft check (DC 10 + spell level). Read magic can be made permanent with a permanency spell.',
+    'Focus: A clear crystal or mineral prism.'],
 },
 {
 'name': 'Reduce Animal',
@@ -3239,7 +3308,12 @@ const spells = [
 'source': 'PHB',
 'level': {'sorcerer': 1, 'wizard': 1},
 'fields': {'components': 'V, S, M', 'casting time': '1 round', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'target': 'One humanoid creature', 'duration': '1 min./level (D)', 'saving throw': 'Fortitude negates', 'spell resistance': 'Yes'},
-'longDesc': ['This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature\'s size category to the next smaller one. The target gains a +2 size bonus to Dexterity, a –2 size penalty to Strength (to a minimum of 1), and a +1 bonus on attack rolls and AC due to its reduced size. A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent\'s square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet. This spell doesn\'t change the target\'s speed. All equipment worn or carried by a creature is similarly reduced by the spell. Melee and projectile weapons deal less damage (see Table 2–3 in the Dungeon Master\'s Guide). Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creature\'s pos- session (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them). Multiple magical effects that reduce size do not stack, which means (among other things) that you can\'t use a second casting of this spell to further reduce the size of as humanoid that\'s still under the effect of the first casting. Reduce person counters and dispels en- large person. Reduce person can be made permanent with a permanency spell. Material Component: A pinch of pow- dered iron.'],
+'longDesc': [
+    'This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature\'s size category to the next smaller one. The target gains a +2 size bonus to Dexterity, a –2 size penalty to Strength (to a minimum of 1), and a +1 bonus on attack rolls and AC due to its reduced size.',
+    'A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent\'s square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet.',
+    'This spell doesn\'t change the target\'s speed. All equipment worn or carried by a creature is similarly reduced by the spell. Melee and projectile weapons deal less damage (see Table 2–3 in the Dungeon Master\'s Guide). Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creature\'s possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).',
+    'Multiple magical effects that reduce size do not stack, which means (among other things) that you can\'t use a second casting of this spell to further reduce the size of a humanoid that\'s still under the effect of the first casting. Reduce person counters and dispels enlarge person. Reduce person can be made permanent with a permanency spell.',
+    'Material Component: A pinch of powdered iron.'],
 },
 {
 'name': 'Reduce Person, Mass',
@@ -3351,7 +3425,10 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 0, 'cleric': 0, 'druid': 0, 'pal': 1, 'sorcerer': 0, 'wizard': 0, 'seidr': 0},
 'fields': {'components': 'V, S, M/DF', 'casting time': '1 standard action', 'range': 'Touch', 'target': 'Creature touched', 'duration': '1 minute', 'saving throw': 'Will negates (harmless)', 'spell resistance': 'Yes (harmless)'},
-'longDesc': ['You imbue the subject with magical en- ergy that protects it from harm, granting it a +1 resistance bonus on saves. Resistance can be made permanent with a permanency spell. Arcane Material Component: A miniature cloak.'],
+'longDesc': [
+    'You imbue the subject with magical energy that protects it from harm, granting it a +1 resistance bonus on saves. Resistance can be made permanent with a permanency spell.',
+    'Arcane Material Component: A miniature cloak.'
+],
 },
 {
 'name': 'Resist Energy',
@@ -3438,8 +3515,11 @@ const spells = [
 'school': 'Necromancy [Fear, Mind-Affecting]',
 'source': 'PHB',
 'level': {'bard': 2, 'sorcerer': 2, 'wizard': 2},
-'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'duration': '1 round/level or 1 round; see', 'saving throw': 'Will partial', 'spell resistance': 'Yes'},
-'longDesc': ['This spell functions like cause fear, except that it causes all targeted creatures of less than 6 HD to become frightened. Material Component: A bit of bone from an undead skeleton, zombie, ghoul, ghast, or mummy.'],
+'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'duration': '1 round/level or 1 round', 'saving throw': 'Will partial', 'spell resistance': 'Yes'},
+'longDesc': [
+    'This spell functions like cause fear, except that it causes all targeted creatures of less than 6 HD to become frightened.',
+    'Material Component: A bit of bone from an undead skeleton, zombie, ghoul, ghast, or mummy.'
+],
 },
 {
 'name': 'Scintillating Pattern',
@@ -3655,7 +3735,7 @@ const spells = [
 'source': 'PHB',
 'level': {'druid': 1, 'seidr': 1},
 'fields': {'components': 'V, S, DF', 'casting time': '1 standard action', 'range': 'Touch', 'target': 'One touched nonmagical oak', 'duration': '1 min./level', 'saving throw': 'Will negates (object)', 'spell resistance': 'Yes (object)'},
-'longDesc': ['Your own nonmagical club or quarterstaff becomes a weapon with a +1 enhancement bonus on attack and damage rolls. (A quarterstaff gains this enhancement for both ends of the weapon.) It deals damage as if it were two size categories larger (a Small club or quarterstaff so transmuted deals 1d8 points of damage, a Medium 2d6, and a Large 3d6), +1 for its enhancement bonus. These effects only occur when the weapon is wielded by you. If you do not wield it, the weapon behaves as if unaffected by this spell.  279'],
+'longDesc': ['Your own nonmagical club or quarterstaff becomes a weapon with a +1 enhancement bonus on attack and damage rolls. (A quarterstaff gains this enhancement for both ends of the weapon.) It deals damage as if it were two size categories larger (a Small club or quarterstaff so transmuted deals 1d8 points of damage, a Medium 2d6, and a Large 3d6), +1 for its enhancement bonus. These effects only occur when the weapon is wielded by you. If you do not wield it, the weapon behaves as if unaffected by this spell.'],
 },
 {
 'name': 'Shocking Grasp',
@@ -3703,7 +3783,10 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 1, 'sorcerer': 1, 'wizard': 1},
 'fields': {'components': 'V, S, F', 'casting time': '1 standard action', 'range': 'Long (400 ft. + 40 ft./level)', 'effect': 'Visual figment that cannot', 'duration': 'Concentration', 'saving throw': 'Will disbelief (if inter-', 'spell resistance': 'No'},
-'longDesc': ['This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create sound, smell, texture, or temperature. You can move the image within the limits of the size of the effect. Focus: A bit of fleece.'],
+'longDesc': [
+    'This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create sound, smell, texture, or temperature. You can move the image within the limits of the size of the effect.',
+    'Focus: A bit of fleece.'
+],
 },
 {
 'name': 'Simulacrum',
@@ -4303,7 +4386,10 @@ const spells = [
 'source': 'PHB',
 'level': {'sorcerer': 0, 'wizard': 0},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Touch', 'target': 'Creature touched', 'duration': '1 round/level', 'saving throw': 'Fortitude negates', 'spell resistance': 'Yes'},
-'longDesc': ['You channel negative energy through your touch, fatiguing the target. You must succeed on a touch attack to strike a target. The subject is immediately fatigued for the spell\'s duration. This spell has no effect on a creature that is already fatigued. Unlike with nor- mal fatigue, the effect ends as soon as the spell\'s duration expires. Material Component: A drop of sweat.'],
+'longDesc': [
+    'You channel negative energy through your touch, fatiguing the target. You must succeed on a touch attack to strike a target. The subject is immediately fatigued for the spell\'s duration. This spell has no effect on a creature that is already fatigued. Unlike with normal fatigue, the effect ends as soon as the spell\'s duration expires.',
+    'Material Component: A drop of sweat.'
+],
 },
 {
 'name': 'Touch of Idiocy',
@@ -4399,7 +4485,11 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 1, 'sorcerer': 1, 'wizard': 1},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'effect': 'One invisible, mindless, shape-', 'duration': '1 hour/level', 'saving throw': 'None', 'spell resistance': 'No'},
-'longDesc': ['An unseen servant is an invisible, mindless, shapeless force that performs simple tasks at your command. It can run and fetch things, open unstuck doors, and hold chairs, as well as clean and mend. The servant can perform only one activity at a time, but it repeats the same activity over and over again if told to do so, thus allowing you to command it to clean the floor and then turn your attention elsewhere as long as you remain within range. It can open only normal doors, drawers, lids, and the like. It has an effec- tive Strength score of 2 (so it can lift 20 pounds or drag 100 pounds). It can trigger traps and such, but it can exert only 20 pounds of force, which is not enough to activate certain pressure plates and other devices. It can\'t perform any task that requires a skill check with a DC higher than 10 or that requires a check using a 298 skill that can\'t be used untrained. Its speed is 15 feet. The servant cannot attack in any way; it is never allowed an attack roll. It cannot be killed, but it dissipates if it takes 6 points of damage from area attacks. (It gets no saves against attacks.) If you attempt to send it beyond the spell\'s range (measured from your current position), the servant ceases to exist. Material Component: A piece of string and a bit of wood.'],
+'longDesc': ['An unseen servant is an invisible, mindless, shapeless force that performs simple tasks at your command. It can run and fetch things, open unstuck doors, and hold chairs, as well as clean and mend. The servant can perform only one activity at a time, but it repeats the same activity over and over again if told to do so, thus allowing you to command it to clean the floor and then turn your attention elsewhere as long as you remain within range. It can open only normal doors, drawers, lids, and the like.',
+'It has an effective Strength score of 2 (so it can lift 20 pounds or drag 100 pounds). It can trigger traps and such, but it can exert only 20 pounds of force, which is not enough to activate certain pressure plates and other devices. It can\'t perform any task that requires a skill check with a DC higher than 10 or that requires a check using a skill that can\'t be used untrained. Its speed is 15 feet.',
+'The servant cannot attack in any way; it is never allowed an attack roll. It cannot be killed, but it dissipates if it takes 6 points of damage from area attacks. (It gets no saves against attacks.)',
+'If you attempt to send it beyond the spell\'s range (measured from your current position), the servant ceases to exist.',
+'Material Component: A piece of string and a bit of wood.'],
 },
 {
 'name': 'Vampiric Touch',
@@ -4975,7 +5065,10 @@ const spells = [
 'source': 'Frostburn',
 'level': {'cleric': 2, 'druid': 2, 'sorcerer': 2, 'wizard': 2, 'seidr': 2},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Touch', 'area': 'Weapon touched', 'duration': '1 round/level', 'saving throw': 'Will negates (harm-', 'spell resistance': 'No'},
-'longDesc': ['You imbue a weapon with icy cold, granting it a power similar to the frost special ability. A frost weapon deals an extra 1d6 points of cold damage on a successful hit. If cast on a bow, crossbow, or sling, the spell bestows the cold energy upon the weapon\'s ammunition. This ability stacks with the frost special ability, but not with itself. Material Component: A drop of water.'],
+'longDesc': [
+    'You imbue a weapon with icy cold, granting it a power similar to the frost special ability. A frost weapon deals an extra 1d6 points of cold damage on a successful hit. If cast on a bow, crossbow, or sling, the spell bestows the cold energy upon the weapon\'s ammunition. This ability stacks with the frost special ability, but not with itself.',
+    'Material Component: A drop of water.'
+],
 },
 {
 'name': 'Frostbite',
@@ -5263,7 +5356,19 @@ const spells = [
 'source': 'Frostburn',
 'level': {'druid': 2, 'sorcerer': 2, 'wizard': 2, 'seidr': 2},
 'fields': {'components': 'V, S, M/DF', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'effect': '5-ft.-diameter sphere', 'duration': '1 round/level', 'saving throw': 'Refl ex negates', 'spell resistance': 'Yes'},
-'longDesc': ['A sphere of intense cold energy rolls in whichever direction you point and damages those it strikes. It moves 30 feet per round. As part of this move- ment, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals 1d6 points of cold damage as well as 1d4 points of Dexter- ity damage to that creature, though a successful Refl ex save negates both the cold damage and Dexterity damage. A numbing sphere rolls over barriers less than 4 feet tall, such as furniture and low walls. It instantly freezes water it encounters in 5-foot-cube sections, creating chunks of ice in large bodies of water. The sphere moves as long as you actively direct it (a move action for you); otherwise, it merely remains at rest. The sphere can be destroyed by attacks directed against it. It has 10 hit points and damage reduction 5/–. The surface of the sphere has a spongy, yielding consistency and so does not cause damage except by extreme cold. It cannot push aside unwilling creatures or batter down large obstacles. A numbing sphere winks out if it exceeds the spell\'s range. Arcane Material Component: A bit of sponge and a drop of water. Obedient Avalanche Conjuration (Creation) [Cold] Level: Cold 9 Components: V, S Casting Time: 1 standard action Range: Medium (100 ft. + 10 ft./level) Effect: 20-ft.-radius av a lanche of snow, centered anywhere within range; see text Duration: Instantaneous Saving Throw: Reflex half; see text Spell Resistance: No Obedient Avalanche Half impact and full cold damage (Reflex negates) If save fails, +13 bull rush away from center Light snow 1d8 / 2 caster levels plus 1d6 cold / 2 caster levels If save fails, creature is buried. + Heavy snow One square equals 5 feet. You summon an avalanche of snow out of a rift in midair, burying your foes and sending them to a frosty death. The obedient avalanche affects creatures differ- ently, depending on where they are in relation to the avalanche. Within 20 Feet of the Center Point: Creatures take 1d8 points of damage per two caster levels (maximum 10d8) and an additional 1d6 points of cold damage per two caster levels. Creatures who fail their saves are also buried (as described in Avalanches, page 90 of the Dungeon Master\'s Guide). All squares within 20 feet of the center point are covered in heavy snow (see page 94 of the Dun- geon Master\'s Guide), which persists as long as ordinary snow would. Between 20 Feet and 40 Feet of the Center Point: Creatures take half as much damage from the impact of the avalanche as the creatures nearer the center point took (Reflex save negates). Creatures who fail their saves must also resist the force of the snow moving past them as if they were being bull rushed. The snow has a +13 bonus (+5 for effective Strength of 20 and +8 for effectively being Huge) on the bull rush check, and it pushes charac- ters away from the center point of the spell. All squares in the 20-foot to 40-foot ring are covered in light snow, which persists as long as ordi- nary snow would. Terrain and Structures: The ava- lanche uproots small trees and other vegetation automatically, and it leaves a trail of light rubble (as described on page 91 of the Dungeon Master\'s Guide) even after the snow melts. Structures struck by an obedient avalanche take 1d610 points of damage. The obedient avalanche extinguishes all fl ames, whether normal or magical, it touches.'],
+'longDesc': [
+    'A sphere of intense cold energy rolls in whichever direction you point and damages those it strikes. It moves 30 feet per round. As part of this movement, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals 1d6 points of cold damage as well as 1d4 points of Dexterity damage to that creature, though a successful Reflex save negates both the cold damage and Dexterity damage. A numbing sphere rolls over barriers less than 4 feet tall, such as furniture and low walls. It instantly freezes water it encounters in 5-foot-cube sections, creating chunks of ice in large bodies of water. The sphere moves as long as you actively direct it (a move action for you); otherwise, it merely remains at rest.',
+    'The sphere can be destroyed by attacks directed against it. It has 10 hit points and damage reduction 5/–. The surface of the sphere has a spongy, yielding consistency and so does not cause damage except by extreme cold. It cannot push aside unwilling creatures or batter down large obstacles. A numbing sphere winks out if it exceeds the spell\'s range.',
+    'Arcane Material Component: A bit of sponge and a drop of water.'
+],
+},
+{
+'name': 'Obedient Avalanche',
+'school': 'Conjuration (Creation) [Cold]',
+'source': 'Frostburn',
+'level': {'cold': 9},
+'fields': {'components': 'V, S', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'effect': '20-ft.-radius avalanche of snow, centered anywhere within range', 'duration': 'Instantaneous', 'saving throw': 'Reflex half' ,'spell resistance': 'No'},
+'longDesc': ['You summon an avalanche of snow out of a rift in midair, burying your foes and sending them to a frosty death. The obedient avalanche affects creatures differ- ently, depending on where they are in relation to the avalanche. Within 20 Feet of the Center Point: Creatures take 1d8 points of damage per two caster levels (maximum 10d8) and an additional 1d6 points of cold damage per two caster levels. Creatures who fail their saves are also buried (as described in Avalanches, page 90 of the Dungeon Master\'s Guide). All squares within 20 feet of the center point are covered in heavy snow (see page 94 of the Dun- geon Master\'s Guide), which persists as long as ordinary snow would. Between 20 Feet and 40 Feet of the Center Point: Creatures take half as much damage from the impact of the avalanche as the creatures nearer the center point took (Reflex save negates). Creatures who fail their saves must also resist the force of the snow moving past them as if they were being bull rushed. The snow has a +13 bonus (+5 for effective Strength of 20 and +8 for effectively being Huge) on the bull rush check, and it pushes charac- ters away from the center point of the spell. All squares in the 20-foot to 40-foot ring are covered in light snow, which persists as long as ordi- nary snow would. Terrain and Structures: The ava- lanche uproots small trees and other vegetation automatically, and it leaves a trail of light rubble (as described on page 91 of the Dungeon Master\'s Guide) even after the snow melts. Structures struck by an obedient avalanche take 1d610 points of damage. The obedient avalanche extinguishes all fl ames, whether normal or magical, it touches.'],
 },
 {
 'name': 'Obscuring Snow',

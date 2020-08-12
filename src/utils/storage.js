@@ -1,8 +1,13 @@
 function getLocalStorage(session, ind) {
+    let res = localStorage[session];
+    if (typeof res === 'undefined') {
+        res = '{}';
+    }
+
     if (typeof ind !== 'undefined') {
-        return JSON.parse(localStorage[session])[ind];
+        return JSON.parse(res)[ind];
     } else {
-        return JSON.parse(localStorage[session]);
+        return JSON.parse(res);
     }
 }
   
