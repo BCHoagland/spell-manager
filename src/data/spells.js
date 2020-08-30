@@ -1595,8 +1595,11 @@ const spells = [
 'school': 'Transmutation [Fire]',
 'source': 'PHB',
 'level': {'sorcerer': 3, 'wizard': 3},
-'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'target': 'Fifty projectiles, all of which must', 'duration': '10 min./level', 'saving throw': 'None', 'spell resistance': 'No'},
-'longDesc': ['You turn ammunition (such as arrows, bolts, shuriken, and stones) into fiery pro- jectiles. Each piece of ammunition deals an extra 1d6 points of fire damage to any target it hits. A flaming projectile can easily ignite a flammable object or struc- ture, but it won\'t ignite a creature it strikes. Material Component: A drop of oil and a small piece of flint.'],
+'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'target': 'Fifty projectiles, all of which must be in contact with each other at the time of casting', 'duration': '10 min./level', 'saving throw': 'None', 'spell resistance': 'No'},
+'longDesc': [
+    'You turn ammunition (such as arrows, bolts, shuriken, and stones) into fiery projectiles. Each piece of ammunition deals an extra 1d6 points of fire damage to any target it hits. A flaming projectile can easily ignite a flammable object or structure, but it won\'t ignite a creature it strikes.',
+    'Material Component: A drop of oil and a small piece of flint.'
+],
 },
 {
 'name': 'Flame Blade',
@@ -1921,7 +1924,12 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 3, 'sorcerer': 3, 'wizard': 3},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'duration': '1 round/level', 'saving throw': 'Fortitude negates (harm-', 'spell resistance': 'Yes (harmless)'},
-'longDesc': ['The transmuted creatures move and act more quickly than normal. This extra speed has several effects. When making a full attack action, a hasted creature may make one extra attack with any weapon he is holding. The attack is made using the creature\'s full base attack bonus, plus any modifiers appropriate to the situation. (This effect is not cumulative with similar effects, such as that provided by a weapon of speed, nor does it actually grant an extra action, so you can\'t use it to cast a second spell or otherwise take an extra action in the round.) A hasted creature gains a +1 bonus on attack rolls and a +1 dodge bonus to AC and Reflex saves. Any condition that makes you lose your Dexterity bonus to Armor Class (if any) also makes you lose dodge bonuses. All of the hasted creature\'s modes of movement (including land movement, burrow, climb, fly, and swim) increase by 30 feet, to a maximum of twice the sub- ject\'s normal speed using that form of movement. This increase counts as an enhancement bonus, and it affects the creature\'s jumping distance as normal for increased speed. Multiple haste effects don\'t stack. Haste dispels and counters slow. Material Component: A shaving of lico- rice root.'],
+'longDesc': [
+    'The transmuted creatures move and act more quickly than normal. This extra speed has several effects. When making a full attack action, a hasted creature may make one extra attack with any weapon he is holding. The attack is made using the creature\'s full base attack bonus, plus any modifiers appropriate to the situation. (This effect is not cumulative with similar effects, such as that provided by a weapon of speed, nor does it actually grant an extra action, so you can\'t use it to cast a second spell or otherwise take an extra action in the round.)',
+    'A hasted creature gains a +1 bonus on attack rolls and a +1 dodge bonus to AC and Reflex saves. Any condition that makes you lose your Dexterity bonus to Armor Class (if any) also makes you lose dodge bonuses. All of the hasted creature\'s modes of movement (including land movement, burrow, climb, fly, and swim) increase by 30 feet, to a maximum of twice the subject\'s normal speed using that form of movement. This increase counts as an enhancement bonus, and it affects the creature\'s jumping distance as normal for increased speed.',
+    'Multiple haste effects don\'t stack. Haste dispels and counters slow.',
+    'Material Component: A shaving of licorice root.'
+],
 },
 {
 'name': 'Heal',
@@ -3273,7 +3281,10 @@ const spells = [
 'source': 'PHB',
 'level': {'sorcerer': 3, 'wizard': 3},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'effect': 'Ray', 'duration': '1 min./level', 'saving throw': 'Fortitude partial; see text', 'spell resistance': 'Yes'},
-'longDesc': ['A black ray projects from your pointing finger. You must succeed on a ranged touch attack with the ray to strike a target. The subject is immediately exhausted for the spell\'s duration. A successful Fortitude save means the creature is only fatigued. A character that is already fatigued instead becomes exhausted. This spell has no effect on a creature that is already exhausted. Unlike normal exhaustion or fatigue, the effect ends as soon as the spell\'s duration expires. Material Component: A drop of sweat.'],
+'longDesc': [
+    'A black ray projects from your pointing finger. You must succeed on a ranged touch attack with the ray to strike a target. The subject is immediately exhausted for the spell\'s duration.',
+    'A successful Fortitude save means the creature is only fatigued. A character that is already fatigued instead becomes exhausted. This spell has no effect on a creature that is already exhausted. Unlike normal exhaustion or fatigue, the effect ends as soon as the spell\'s duration expires.',
+    'Material Component: A drop of sweat.'],
 },
 {
 'name': 'Ray of Frost',
@@ -3826,7 +3837,10 @@ const spells = [
 'source': 'PHB',
 'level': {'bard': 3, 'sorcerer': 3, 'wizard': 3},
 'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Close (25 ft. + 5 ft./2 levels)', 'duration': '1 round/level', 'saving throw': 'Will negates', 'spell resistance': 'Yes'},
-'longDesc': ['An affected creature moves and attacks at a drastically slowed rate. A slowed creature can take only a single move action or stan- dard action each turn, but not both (nor may it take full-round actions). Ad- ditionally, it takes a –1 penalty on attack rolls, AC, and Reflex saves. A slowed crea- ture moves at half its normal speed (round down to the next 5-foot increment), which affects the creature\'s jumping distance as normal for decreased speed. Multiple slow effects don\'t stack. Slow counters and dispels haste. Material Component: A drop of molasses.'],
+'longDesc': [
+    'An affected creature moves and attacks at a drastically slowed rate. A slowed creature can take only a single move action or standard action each turn, but not both (nor may it take full-round actions). Additionally, it takes a –1 penalty on attack rolls, AC, and Reflex saves. A slowed creature moves at half its normal speed (round down to the next 5-foot increment), which affects the creature\'s jumping distance as normal for decreased speed.',
+    'Multiple slow effects don\'t stack. Slow counters and dispels haste.',
+    'Material Component: A drop of molasses.'],
 },
 {
 'name': 'Snare',
@@ -4001,8 +4015,11 @@ const spells = [
 'school': 'Conjuration (Creation)',
 'source': 'PHB',
 'level': {'sorcerer': 3, 'wizard': 3},
-'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'effect': 'Cloud spreads in 20-ft. radius,', 'duration': '1 round/level', 'saving throw': 'Fortitude negates; see', 'spell resistance': 'No'},
-'longDesc': ['Stinking cloud creates a bank of fog like that created by fog cloud, except that the vapors are nauseating. Living creatures in the cloud become nauseated. This condition lasts as long as the creature is in the cloud and for 1d4+1 rounds after it leaves. (Roll separately for each nauseated character.) Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn. Stinking cloud can be made permanent with a permanency spell. A permanent stinking cloud dispersed by wind reforms in 10 minutes. Material Component: A rotten egg or several skunk cabbage leaves.'],
+'fields': {'components': 'V, S, M', 'casting time': '1 standard action', 'range': 'Medium (100 ft. + 10 ft./level)', 'effect': 'Cloud spreads in 20-ft. radius, 20 ft. high', 'duration': '1 round/level', 'saving throw': 'Fortitude negates; see', 'spell resistance': 'No'},
+'longDesc': [
+    'Stinking cloud creates a bank of fog like that created by fog cloud, except that the vapors are nauseating. Living creatures in the cloud become nauseated. This condition lasts as long as the creature is in the cloud and for 1d4+1 rounds after it leaves (Roll separately for each nauseated character). Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn.',
+    'Stinking cloud can be made permanent with a permanency spell. A permanent stinking cloud dispersed by wind reforms in 10 minutes.',
+    'Material Component: A rotten egg or several skunk cabbage leaves.'],
 },
 {
 'name': 'Stone Shape',
