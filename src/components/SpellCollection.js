@@ -4,7 +4,8 @@ import SpellPage from './SpellPage';
 
 
 function makeSpellTable(spells, profile, level, showPage, session) {
-    const filteredSpells = spells.filter(spell => spell.level[profile.class] === level);
+    let filteredSpells = spells.filter(spell => spell.level[profile.class] === level);
+    filteredSpells = filteredSpells.filter(spell => typeof(profile.spellAllotment[level]) !== 'undefined' && profile.spellAllotment[level][0] > 0);
     if (filteredSpells.length > 0) {
         return <SpellTable
             key={level}

@@ -86,6 +86,8 @@ class SpellEntry extends React.Component {
                 {/* Prepared */}
                 <td>
                     <div>{this.state.prepared}</div>
+                </td>
+                <td>
                     <button onClick={this.prepare}>+</button>
                     <button onClick={this.cast}>-</button>
                 </td>
@@ -103,6 +105,8 @@ class SpellEntry extends React.Component {
                 {/* Upcast */}
                 <td>
                     <div>{this.state.upcast > 0 ? '+' + this.state.upcast : 0}</div>
+                </td>
+                <td>
                     <button onClick={this.upcast}>+</button>
                     <button onClick={this.downcast}>-</button>
                 </td>

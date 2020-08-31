@@ -133,7 +133,7 @@ code {
 }
 
 .spellHeader {
-  border-bottom: 1px solid mediumslateblue;
+  /* border-bottom: 1px solid mediumslateblue; */
   padding-bottom: 1em;
 }
 
