@@ -21,4 +21,12 @@ function setLocalStorage(session, ind, val) {
     localStorage.setItem(session, JSON.stringify(obj));
 }
 
-export {getLocalStorage, setLocalStorage};
+function getSpellCount(session, name) {
+    const res = getLocalStorage(session, name);
+    if (typeof(res) === 'undefined') {
+        return 0;
+    }
+    return res;
+}
+
+export {getLocalStorage, setLocalStorage, getSpellCount};

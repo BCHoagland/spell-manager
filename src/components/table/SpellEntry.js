@@ -1,5 +1,5 @@
 import React from 'react';
-import {getLocalStorage, setLocalStorage} from '../../utils/storage';
+import {setLocalStorage, getSpellCount} from '../../utils/storage';
 import {highlightColors, schoolColors} from '../../utils/colors';
 
 
@@ -10,11 +10,11 @@ class SpellEntry extends React.Component {
             session: props.session,
             spell: props.spell,
             popup: props.popup,
-            prepared: getLocalStorage(props.session, props.spell.name) === 'P',
-            cast: getLocalStorage(props.session, props.spell.name) === 'C'
+            numPrepared: getSpellCount(props.session, props.spell.name)
         }
         this.getHighlight = this.getHighlight.bind(this);
-        this.changeCheck = this.changeCheck.bind(this);
+        this.prepare = this.prepare.bind(this);
+        this.cast = this.cast.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -22,48 +22,34 @@ class SpellEntry extends React.Component {
             this.setState({
                 session: this.props.session,
                 spell: this.props.spell,
-                prepared: getLocalStorage(this.props.session, this.props.spell.name) === 'P',
-                cast: getLocalStorage(this.props.session, this.props.spell.name) === 'C'
+                numPrepared: getSpellCount(this.props.session, this.props.spell.name)
             });
         }
     }
 
     getHighlight() {
-        if (this.state.prepared) {
+        if (this.state.numPrepared > 0) {
             return highlightColors['P'];
-        } else if (this.state.cast) {
-            return highlightColors['C'];
+        // } else if (this.state.cast) {
+        //     return highlightColors['C'];
         } else {
             return null;
         }
     }
 
-    changeCheck(action) {
-        let p = null;
-        let c = null;
-
-        // set checks for each checkbox
-        if (action === 'P') {
-            p = !this.state.prepared;
-            c = false;
-        } else if (action === 'C') {
-            p = false;
-            c = !this.state.cast;
-        }
-
-        // save checked status of this spell in localStorage
-        if (p) {
-            setLocalStorage(this.state.session, this.state.spell.name, 'P');
-        } else if (c) {
-            setLocalStorage(this.state.session, this.state.spell.name, 'C');
-        } else {
-            setLocalStorage(this.state.session, this.state.spell.name, null);
-        }
-
-        // actually update the state
+    prepare() {
+        const n = this.state.numPrepared + 1;
+        setLocalStorage(this.state.session, this.state.spell.name, n);
         this.setState({
-            prepared: p,
-            cast: c,
+            numPrepared: n
+        });
+    }
+
+    cast() {
+        const n = Math.max(0, this.state.numPrepared - 1);
+        setLocalStorage(this.state.session, this.state.spell.name, n);
+        this.setState({
+            numPrepared: n
         });
     }
 
@@ -75,13 +61,11 @@ class SpellEntry extends React.Component {
 
         return (
             <tr style={{backgroundColor: this.getHighlight()}}>
-                {/* Prepared checkbox */}
+                {/* Prepared */}
                 <td>
-                    <input type="checkbox" onChange={e => {}} checked={this.state.prepared} onClick={this.changeCheck.bind(this, 'P')}></input>
-                </td>
-                {/* Cast checkbox */}
-                <td>
-                    <input type="checkbox" onChange={e => {}} checked={this.state.cast} onClick={this.changeCheck.bind(this, 'C')}></input>
+                    <div>{this.state.numPrepared}</div>
+                    <button onClick={this.prepare}>+</button>
+                    <button onClick={this.cast}>-</button>
                 </td>
                 {/* Spell name */}
                 <td>
@@ -93,7 +77,7 @@ class SpellEntry extends React.Component {
                     &nbsp;{schoolPostfix}
                 </td>
                 {/* Short description */}
-                {/* <td>{this.state.spell.shortDesc}</td> */}
+                    {/* <td>{this.state.spell.shortDesc}</td> */}
                 {/* Spell source */}
                 <td>{this.state.spell.source}</td>
             </tr>
