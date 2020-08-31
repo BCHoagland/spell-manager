@@ -1,34 +1,40 @@
 import React from 'react';
-import {setLocalStorage, getSpellCount} from '../../utils/storage';
+import {getSpell, setSpell} from '../../utils/storage';
 import {highlightColors, schoolColors} from '../../utils/colors';
 
 
 class SpellEntry extends React.Component {
     constructor(props) {
         super(props);
+        const savedData = getSpell(props.session, props.spell.name);
         this.state = {
             session: props.session,
             spell: props.spell,
             popup: props.popup,
-            numPrepared: getSpellCount(props.session, props.spell.name)
+            prepared: savedData['prepared'],
+            upcast: savedData['upcast']
         }
         this.getHighlight = this.getHighlight.bind(this);
         this.prepare = this.prepare.bind(this);
         this.cast = this.cast.bind(this);
+        this.upcast = this.upcast.bind(this);
+        this.downcast = this.downcast.bind(this);
     }
 
     componentDidUpdate(prevProps) {
+        const savedData = getSpell(this.props.session, this.props.spell.name);
         if (prevProps.session !== this.props.session) {
             this.setState({
                 session: this.props.session,
                 spell: this.props.spell,
-                numPrepared: getSpellCount(this.props.session, this.props.spell.name)
+                prepared: savedData['prepared'],
+                upcast: savedData['upcast']
             });
         }
     }
 
     getHighlight() {
-        if (this.state.numPrepared > 0) {
+        if (this.state.prepared > 0) {
             return highlightColors['P'];
         // } else if (this.state.cast) {
         //     return highlightColors['C'];
@@ -38,18 +44,34 @@ class SpellEntry extends React.Component {
     }
 
     prepare() {
-        const n = this.state.numPrepared + 1;
-        setLocalStorage(this.state.session, this.state.spell.name, n);
+        const n = this.state.prepared + 1;
+        setSpell(this.state.session, this.state.spell.name, n, this.state.upcast);
         this.setState({
-            numPrepared: n
+            prepared: n
         });
     }
 
     cast() {
-        const n = Math.max(0, this.state.numPrepared - 1);
-        setLocalStorage(this.state.session, this.state.spell.name, n);
+        const n = Math.max(0, this.state.prepared - 1);
+        setSpell(this.state.session, this.state.spell.name, n, this.state.upcast);
         this.setState({
-            numPrepared: n
+            prepared: n
+        });
+    }
+
+    upcast() {
+        const n = this.state.upcast + 1;
+        setSpell(this.state.session, this.state.spell.name, this.state.prepared, n);
+        this.setState({
+            upcast: n
+        });
+    }
+
+    downcast() {
+        const n = Math.max(0, this.state.upcast - 1);
+        setSpell(this.state.session, this.state.spell.name, this.state.prepared, n);
+        this.setState({
+            upcast: n
         });
     }
 
@@ -63,7 +85,7 @@ class SpellEntry extends React.Component {
             <tr style={{backgroundColor: this.getHighlight()}}>
                 {/* Prepared */}
                 <td>
-                    <div>{this.state.numPrepared}</div>
+                    <div>{this.state.prepared}</div>
                     <button onClick={this.prepare}>+</button>
                     <button onClick={this.cast}>-</button>
                 </td>
@@ -78,8 +100,12 @@ class SpellEntry extends React.Component {
                 </td>
                 {/* Short description */}
                     {/* <td>{this.state.spell.shortDesc}</td> */}
-                {/* Spell source */}
-                <td>{this.state.spell.source}</td>
+                {/* Upcast */}
+                <td>
+                    <div>{this.state.upcast > 0 ? '+' + this.state.upcast : 0}</div>
+                    <button onClick={this.upcast}>+</button>
+                    <button onClick={this.downcast}>-</button>
+                </td>
             </tr>
         )
     }

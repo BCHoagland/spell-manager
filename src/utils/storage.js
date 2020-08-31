@@ -10,7 +10,8 @@ function getLocalStorage(session, ind) {
         return JSON.parse(res);
     }
 }
-  
+
+
 function setLocalStorage(session, ind, val) {
     const obj = getLocalStorage(session);
     if (val == null) {
@@ -21,12 +22,22 @@ function setLocalStorage(session, ind, val) {
     localStorage.setItem(session, JSON.stringify(obj));
 }
 
-function getSpellCount(session, name) {
+
+function getSpell(session, name) {
     const res = getLocalStorage(session, name);
     if (typeof(res) === 'undefined') {
-        return 0;
+        return {'prepared': 0, 'upcast': 0};
     }
+    res['prepared'] = parseInt(res['prepared']);
+    res['upcast'] = parseInt(res['upcast']);
     return res;
 }
 
-export {getLocalStorage, setLocalStorage, getSpellCount};
+
+function setSpell(session, name, prepared, upcast) {
+    const data = {'prepared': prepared, 'upcast': upcast};
+    setLocalStorage(session, name, data);
+}
+
+
+export {getLocalStorage, setLocalStorage, getSpell, setSpell};
