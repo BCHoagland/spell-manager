@@ -34,8 +34,13 @@ function getSpell(session, name) {
 }
 
 
-function setSpell(session, name, prepared, upcast) {
-    const data = {'prepared': prepared, 'upcast': upcast};
+function setSpell(session, name, prepared, upcast, preparedHistory) {
+    let data;
+    if (typeof(preparedHistory) === 'undefined') {
+        data = {'prepared': prepared, 'upcast': upcast};
+    } else {
+        data = {'prepared': prepared, 'upcast': upcast, 'preparedHistory': preparedHistory};
+    }
     setLocalStorage(session, name, data);
 }
 

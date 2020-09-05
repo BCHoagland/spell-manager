@@ -12,7 +12,8 @@ class SpellEntry extends React.Component {
             spell: props.spell,
             popup: props.popup,
             prepared: savedData['prepared'],
-            upcast: savedData['upcast']
+            upcast: savedData['upcast'],
+            preparedHistory: savedData['preparedHistory']
         }
         this.getHighlight = this.getHighlight.bind(this);
         this.prepare = this.prepare.bind(this);
@@ -28,7 +29,8 @@ class SpellEntry extends React.Component {
                 session: this.props.session,
                 spell: this.props.spell,
                 prepared: savedData['prepared'],
-                upcast: savedData['upcast']
+                upcast: savedData['upcast'],
+                preparedHistory: savedData['preparedHistory']
             });
         }
     }
@@ -36,8 +38,8 @@ class SpellEntry extends React.Component {
     getHighlight() {
         if (this.state.prepared > 0) {
             return highlightColors['P'];
-        // } else if (this.state.cast) {
-        //     return highlightColors['C'];
+        } else if (this.state.preparedHistory > 0) {
+            return highlightColors['C'];
         } else {
             return null;
         }
@@ -53,9 +55,10 @@ class SpellEntry extends React.Component {
 
     cast() {
         const n = Math.max(0, this.state.prepared - 1);
-        setSpell(this.state.session, this.state.spell.name, n, this.state.upcast);
+        setSpell(this.state.session, this.state.spell.name, n, this.state.upcast, this.state.prepared);
         this.setState({
-            prepared: n
+            prepared: n,
+            preparedHistory: this.state.prepared
         });
     }
 
