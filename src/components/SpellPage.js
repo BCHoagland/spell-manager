@@ -1,5 +1,19 @@
 import React from 'react';
 
+import {schoolColors} from '../utils/colors';
+
+
+function SpellHeader(props) {
+    const school = props.spell.school.split(" ").shift().toLowerCase();
+    const color = typeof(schoolColors[school]) === 'undefined' ? 'black' : schoolColors[school];
+    return (
+        <div className='spellHeader' style={{borderBottom: '1px solid ' + color}}>
+            <h2>{props.spell.name}</h2>
+            <i>{props.spell.school}</i>
+        </div>
+    )
+}
+
 
 function SpellFields(props) {
     const keys = Object.keys(props.spell.fields);
@@ -15,16 +29,6 @@ function SpellFields(props) {
     return (
         <div>{listItems}</div>
     );
-}
-
-
-function SpellHeader(props) {
-    return (
-        <div className='spellHeader'>
-            <h2>{props.spell.name}</h2>
-            <i>{props.spell.school}</i>
-        </div>
-    )
 }
 
 

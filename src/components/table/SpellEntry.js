@@ -1,69 +1,80 @@
 import React from 'react';
-import {getLocalStorage, setLocalStorage} from '../../utils/storage';
+import {getSpell, setSpell} from '../../utils/storage';
 import {highlightColors, schoolColors} from '../../utils/colors';
 
 
 class SpellEntry extends React.Component {
     constructor(props) {
         super(props);
+        const savedData = getSpell(props.session, props.spell.name);
         this.state = {
             session: props.session,
             spell: props.spell,
             popup: props.popup,
-            prepared: getLocalStorage(props.session, props.spell.name) === 'P',
-            cast: getLocalStorage(props.session, props.spell.name) === 'C'
+            prepared: savedData['prepared'],
+            upcast: savedData['upcast'],
+            preparedHistory: savedData['preparedHistory']
         }
         this.getHighlight = this.getHighlight.bind(this);
-        this.changeCheck = this.changeCheck.bind(this);
+        this.prepare = this.prepare.bind(this);
+        this.cast = this.cast.bind(this);
+        this.upcast = this.upcast.bind(this);
+        this.downcast = this.downcast.bind(this);
     }
 
     componentDidUpdate(prevProps) {
+        const savedData = getSpell(this.props.session, this.props.spell.name);
         if (prevProps.session !== this.props.session) {
             this.setState({
                 session: this.props.session,
                 spell: this.props.spell,
-                prepared: getLocalStorage(this.props.session, this.props.spell.name) === 'P',
-                cast: getLocalStorage(this.props.session, this.props.spell.name) === 'C'
+                prepared: savedData['prepared'],
+                upcast: savedData['upcast'],
+                preparedHistory: savedData['preparedHistory']
             });
         }
     }
 
     getHighlight() {
-        if (this.state.prepared) {
+        if (this.state.prepared > 0) {
             return highlightColors['P'];
-        } else if (this.state.cast) {
+        } else if (this.state.preparedHistory > 0) {
             return highlightColors['C'];
         } else {
             return null;
         }
     }
 
-    changeCheck(action) {
-        let p = null;
-        let c = null;
-
-        // set checks for each checkbox
-        if (action === 'P') {
-            p = !this.state.prepared;
-            c = false;
-        } else if (action === 'C') {
-            p = false;
-            c = !this.state.cast;
-        }
-
-        // save checked status of this spell in localStorage
-        if (p) {
-            setLocalStorage(this.state.session, this.state.spell.name, 'P');
-        } else if (c) {
-            setLocalStorage(this.state.session, this.state.spell.name, 'C');
-        } else {
-            setLocalStorage(this.state.session, this.state.spell.name, null);
-        }
-
-        // actually update the state
+    prepare() {
+        const n = this.state.prepared + 1;
+        setSpell(this.state.session, this.state.spell.name, n, this.state.upcast);
         this.setState({
-            prepared: p,
-            cast: c,
+            prepared: n
+        });
+    }
+
+    cast() {
+        const n = Math.max(0, this.state.prepared - 1);
+        setSpell(this.state.session, this.state.spell.name, n, this.state.upcast, this.state.prepared);
+        this.setState({
+            prepared: n,
+            preparedHistory: this.state.prepared
+        });
+    }
+
+    upcast() {
+        const n = this.state.upcast + 1;
+        setSpell(this.state.session, this.state.spell.name, this.state.prepared, n);
+        this.setState({
+            upcast: n
+        });
+    }
+
+    downcast() {
+        const n = Math.max(0, this.state.upcast - 1);
+        setSpell(this.state.session, this.state.spell.name, this.state.prepared, n);
+        this.setState({
+            upcast: n
         });
     }
 
@@ -75,13 +86,13 @@ class SpellEntry extends React.Component {
 
         return (
             <tr style={{backgroundColor: this.getHighlight()}}>
-                {/* Prepared checkbox */}
+                {/* Prepared */}
                 <td>
-                    <input type="checkbox" onChange={e => {}} checked={this.state.prepared} onClick={this.changeCheck.bind(this, 'P')}></input>
+                    <div>{this.state.prepared}</div>
                 </td>
-                {/* Cast checkbox */}
                 <td>
-                    <input type="checkbox" onChange={e => {}} checked={this.state.cast} onClick={this.changeCheck.bind(this, 'C')}></input>
+                    <button onClick={this.prepare}>+</button>
+                    <button onClick={this.cast}>-</button>
                 </td>
                 {/* Spell name */}
                 <td>
@@ -93,9 +104,15 @@ class SpellEntry extends React.Component {
                     &nbsp;{schoolPostfix}
                 </td>
                 {/* Short description */}
-                {/* <td>{this.state.spell.shortDesc}</td> */}
-                {/* Spell source */}
-                <td>{this.state.spell.source}</td>
+                    {/* <td>{this.state.spell.shortDesc}</td> */}
+                {/* Upcast */}
+                <td>
+                    <div>{this.state.upcast > 0 ? '+' + this.state.upcast : 0}</div>
+                </td>
+                <td>
+                    <button onClick={this.upcast}>+</button>
+                    <button onClick={this.downcast}>-</button>
+                </td>
             </tr>
         )
     }

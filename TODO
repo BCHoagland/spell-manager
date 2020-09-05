@@ -1,3 +1,5 @@
 Go through every spell (oof) and fix them
 
 Add level back to the fields dict per spell
+
+Make spells red if you just got them to 0; pressing - again should make them blank

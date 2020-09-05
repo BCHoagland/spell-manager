@@ -32,12 +32,13 @@ class SpellTable extends React.Component {
                 <table>
                     <thead>
                         <tr>
+                            <td></td>
                             <td>Prepared</td>
-                            <td>Cast</td>
                             <td>Name</td>
                             <td>School</td>
                             {/* <td>Description</td> */}
-                            <td>Source</td>
+                            <td></td>
+                            <td>Upcast</td>
                         </tr>
                     </thead>
                     <tbody>

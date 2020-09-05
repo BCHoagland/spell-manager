@@ -80,6 +80,14 @@ code {
   padding: 0.5em;
 }
 
+.table td div {
+  display: inline-block;
+}
+
+.table td button {
+  margin: 0 0.5em;
+}
+
 .table tbody tr:nth-child(odd) {
   background-color: #eee;
 }
@@ -125,7 +133,7 @@ code {
 }
 
 .spellHeader {
-  border-bottom: 1px solid mediumslateblue;
+  /* border-bottom: 1px solid mediumslateblue; */
   padding-bottom: 1em;
 }
 

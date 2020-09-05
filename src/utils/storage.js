@@ -10,7 +10,8 @@ function getLocalStorage(session, ind) {
         return JSON.parse(res);
     }
 }
-  
+
+
 function setLocalStorage(session, ind, val) {
     const obj = getLocalStorage(session);
     if (val == null) {
@@ -21,4 +22,27 @@ function setLocalStorage(session, ind, val) {
     localStorage.setItem(session, JSON.stringify(obj));
 }
 
-export {getLocalStorage, setLocalStorage};
+
+function getSpell(session, name) {
+    const res = getLocalStorage(session, name);
+    if (typeof(res) === 'undefined') {
+        return {'prepared': 0, 'upcast': 0};
+    }
+    res['prepared'] = parseInt(res['prepared']);
+    res['upcast'] = parseInt(res['upcast']);
+    return res;
+}
+
+
+function setSpell(session, name, prepared, upcast, preparedHistory) {
+    let data;
+    if (typeof(preparedHistory) === 'undefined') {
+        data = {'prepared': prepared, 'upcast': upcast};
+    } else {
+        data = {'prepared': prepared, 'upcast': upcast, 'preparedHistory': preparedHistory};
+    }
+    setLocalStorage(session, name, data);
+}
+
+
+export {getLocalStorage, setLocalStorage, getSpell, setSpell};
